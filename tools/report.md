@@ -81,64 +81,11 @@ MIDI's key_signature meta event does not reliably mark major/minor mode in this 
 
 All 28 pieces with a determinable key: catalog.yaml matches the MIDI's actual key_signature meta (sharps/flats count) exactly.
 
-## Manual verification of warned pieces (design doc 3.7)
+---
 
-Each of the 7 auto-flagged pieces was checked against independent, published
-descriptions of the piece (program notes, analyses) via web search, since
-none of them showed signs of a code-level extraction bug (see thresholds
-above — all were validated empirically against this catalog). Confidence
-levels below are stated per CLAUDE.md ("不具合の原因を推測した時は、必ずその確度も伝えること").
-
-| id | extracted onset | verification finding | confidence | verdict |
-|---|---|---|---|---|
-| chopin_nocturne_op27_no2 | Db2 (single) | Op.27 No.2 has a rocking barcarolle-style left-hand figure; a lone bass note preceding the melody's entrance is idiomatic for this piece. | High (music-theoretic reasoning; not source-verified against the score) | OK as-is |
-| beethoven_waldstein_1 | C2 (single) → chord after override | Multiple sources (Hyperion Records, classicalmusic-notes.com) describe the opening as "soft, rapidly repeating chords" in the low register, not an isolated bass note. | Medium (secondary sources agree on "chords"; not checked against the printed score or by ear against this exact transcription) | **Overridden** to the full chord — see `data/overrides.yaml` |
-| beethoven_appassionata_1 | C4+C2 | tonic-chord.com's analysis describes the opening as a "down-and-up arpeggio... that cadences on the tonicized dominant" (C is the dominant of F minor) — consistent with the arpeggio's descending start on C. | Medium-high (matches a specific harmonic-analysis source) | OK as-is |
-| debussy_prelude_bergamasque | F1 (single) | Matches this piece's own measured MIDI key signature (F major, 1 flat — see above) and Debussy's characteristic low sustained bass-note openings. | High | OK as-is |
-| liszt_liebestraum_no3 | Eb3 (single) | Multiple sources describe the piece as "begins with a gentle arpeggiated accompaniment" before the melody enters; Eb is the dominant of Ab major, a plausible first accompaniment note. | Medium-high | OK as-is |
-| liszt_hungarian_rhapsody_no2 | C#4 (single) | Sources describe an "unmetered," rubato Lassan introduction "quickly establishing C# minor" as the home key; a tonic-adjacent single note matches this description. | Medium-high | OK as-is |
-| schumann_traumerei | C4 (single) | A specific source states the piece's "first melodic gesture (C–F)" — a direct, exact match to the extracted C4. | High (direct textual confirmation of the exact pitch) | OK as-is |
-
-`leading_silence` warnings (Appassionata, Liebestraum No.3, Hungarian
-Rhapsody No.2, Träumerei) reflect a genuine pause of 1.1-1.8s before the
-first note in these specific transcriptions (soft/rubato openings,
-consistent with each piece's expressive character and with the general
-pattern across this catalog of transcriber-added lead-in silence — see the
-many non-flagged pieces that also have t0 > 0). They do not indicate a
-wrong pitch, only that playback of "the opening note" should start after a
-brief pause; no override is needed for the quiz's core mechanic (guessing
-the pitch).
-
-## M1 gate assessment (02_design.md 3.7)
-
-**Gate requires ≥90% of pieces "correct as-is or resolved via override".**
-
-- 22 / 28 clean automatically, no warnings (79%)
-- + 5 / 28 warned but manually verified correct as-is (see table above)
-- + 1 / 28 warned and resolved via `data/overrides.yaml`
-- = **28 / 28 (100%)** correct-as-is or override-resolved
-
-**Gate: PASSED.** Proceeding to M2 (score data + dataset build). Note that
-manual verification above relied on secondary sources (program notes,
-analyses), not the printed score or listening to the actual audio — a
-final by-ear check during M2's full-catalog score review (02_design.md
-3.7, step 3) is recommended as a low-risk follow-up, not a blocker.
-
-## Keyboard range check (02_design.md 3.7 step 11 / 4.4)
-
-Measured across all 28 pieces' onset notes: **MIDI 29 (F1) to MIDI 83 (B5)**.
-
-02_design.md 4.4 tentatively assumed a C3-C6 (MIDI 48-84) keyboard, pending
-this measurement. That range does **not** cover the actual data — 16 of 28
-pieces have at least one onset note below MIDI 48 (C3); the lowest is
-`debussy_prelude_bergamasque` at F1 (MIDI 29), a full octave below C3.
-
-This needs a decision before M5 (keyboard implementation):
-1. Widen the keyboard to cover F1-B5 (or a clean C1-C6, 5 octaves) — most
-   faithful, but a wider on-screen keyboard, especially on mobile.
-2. Keep a narrower keyboard (e.g. C2-C6) and accept that a few low bass
-   notes (e.g. Debussy Prélude's F1) fall outside the playable range —
-   the answer reveal would still show the correct note name/score, just
-   not let the user "find" that exact pitch on the visible keyboard.
-3. Re-examine the 1-2 most extreme outlier pieces (Debussy Prélude at F1,
-   Chopin Sonata No.2 3rd mvt at Db1/MIDI 34) for a possible substitute.
+**This file (`report.md`) is regenerated by `analyze_midi.py` and is
+overwritten on every run.** Hand-authored analysis (manual verification of
+warned pieces, the M1 gate decision, and the keyboard range decision) lives
+in `tools/report_manual.md` instead, which `analyze_midi.py` never
+touches — see that file for the M1 conclusion. See `tools/report_m2.md`
+for the M2 (score extraction) report.

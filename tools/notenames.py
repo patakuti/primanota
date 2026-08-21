@@ -66,6 +66,21 @@ def midi_to_vexflow_key(midi: int, key: str | None = None) -> str:
     return f"{letter}/{midi_to_octave(midi)}"
 
 
+def key_to_vexflow_signature(key: str | None) -> str:
+    """catalog.yaml key -> VexFlow addKeySignature() string, e.g. 'c#' -> 'C#m'.
+
+    VexFlow's key signature table (src/tables.ts) uses e.g. 'Am', 'C#m',
+    'Bbm' for minor keys (capitalized letter + accidental + 'm') and plain
+    'C', 'Eb', 'F#' for major -- verified directly against the VexFlow
+    source rather than assumed.
+    """
+    if not key:
+        return "C"
+    if key[0].isupper():
+        return key
+    return key[0].upper() + key[1:] + "m"
+
+
 def note_names(midi: int, key: str | None = None) -> dict:
     """All three display forms for a single MIDI note, ready for pieces.json."""
     return {

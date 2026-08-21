@@ -1,5 +1,6 @@
 """Unit tests for notenames.py (02_design.md 6.4)."""
 from notenames import (
+    key_to_vexflow_signature,
     midi_to_name_en,
     midi_to_name_ja,
     midi_to_octave,
@@ -61,3 +62,23 @@ def test_natural_pitch_class_unaffected_by_key():
     # C (pitch class 0) is spelled the same regardless of flat/sharp key.
     assert midi_to_name_en(60, key="Db") == "C4"
     assert midi_to_name_en(60, key="E") == "C4"
+
+
+def test_key_to_vexflow_signature_major_passthrough():
+    assert key_to_vexflow_signature("C") == "C"
+    assert key_to_vexflow_signature("Db") == "Db"
+    assert key_to_vexflow_signature("F#") == "F#"
+
+
+def test_key_to_vexflow_signature_minor_gets_m_suffix():
+    # catalog.yaml's lowercase minor-key convention -> VexFlow's Xm format,
+    # verified against VexFlow's own src/tables.ts keySignatures table.
+    assert key_to_vexflow_signature("a") == "Am"
+    assert key_to_vexflow_signature("c") == "Cm"
+    assert key_to_vexflow_signature("c#") == "C#m"
+    assert key_to_vexflow_signature("bb") == "Bbm"
+    assert key_to_vexflow_signature("g#") == "G#m"
+
+
+def test_key_to_vexflow_signature_none_defaults_to_c():
+    assert key_to_vexflow_signature(None) == "C"

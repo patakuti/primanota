@@ -22,6 +22,8 @@ class Note:
     velocity: int
     start_sec: float
     end_sec: float
+    start_tick: int
+    end_tick: int
 
     @property
     def duration_sec(self) -> float:
@@ -78,7 +80,7 @@ def extract_notes(mid: mido.MidiFile) -> list[Note]:
                 opened = open_notes.pop(key, None)
                 if opened is None:
                     continue  # note_off with no matching note_on; ignore
-                velocity, _start_tick, start_sec = opened
+                velocity, start_tick, start_sec = opened
                 notes.append(
                     Note(
                         track=track_idx,
@@ -87,6 +89,8 @@ def extract_notes(mid: mido.MidiFile) -> list[Note]:
                         velocity=velocity,
                         start_sec=start_sec,
                         end_sec=sec,
+                        start_tick=start_tick,
+                        end_tick=abs_tick,
                     )
                 )
     notes.sort(key=lambda n: n.start_sec)
@@ -109,3 +113,8 @@ def extract_time_signature(mid: mido.MidiFile) -> tuple[int, int]:
             if msg.is_meta and msg.type == "time_signature":
                 return (msg.numerator, msg.denominator)
     return (4, 4)
+
+
+def extract_track_names(mid: mido.MidiFile) -> list[str | None]:
+    """Each track's `track_name` meta event text (None if a track has none)."""
+    return [track.name if track.name else None for track in mid.tracks]

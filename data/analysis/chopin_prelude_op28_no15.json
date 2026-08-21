@@ -1,0 +1,43 @@
+{
+  "id": "chopin_prelude_op28_no15",
+  "t0Sec": 0.0,
+  "isChord": true,
+  "notes": [
+    {
+      "midi": 49,
+      "velocity": 35,
+      "offsetMs": 0.0,
+      "durationMs": 403.12,
+      "track": 2,
+      "name": {
+        "en": "Db3",
+        "ja": "変ニ",
+        "solfege": "レ♭"
+      }
+    },
+    {
+      "midi": 77,
+      "velocity": 49,
+      "offsetMs": 0.0,
+      "durationMs": 604.68,
+      "track": 1,
+      "name": {
+        "en": "F5",
+        "ja": "ヘ",
+        "solfege": "ファ"
+      }
+    }
+  ],
+  "label": {
+    "en": "Db3+F5",
+    "ja": "変ニ＋ヘ",
+    "solfege": "レ♭＋ファ"
+  },
+  "midiKeySignature": "Db",
+  "catalogKey": "Db",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 1515
+}

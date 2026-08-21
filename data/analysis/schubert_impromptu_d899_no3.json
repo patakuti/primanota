@@ -1,0 +1,55 @@
+{
+  "id": "schubert_impromptu_d899_no3",
+  "t0Sec": 0.0,
+  "isChord": true,
+  "notes": [
+    {
+      "midi": 42,
+      "velocity": 29,
+      "offsetMs": 0.0,
+      "durationMs": 2045.93,
+      "track": 2,
+      "name": {
+        "en": "Gb2",
+        "ja": "変ト",
+        "solfege": "ソ♭"
+      }
+    },
+    {
+      "midi": 49,
+      "velocity": 35,
+      "offsetMs": 0.0,
+      "durationMs": 2045.93,
+      "track": 2,
+      "name": {
+        "en": "Db3",
+        "ja": "変ニ",
+        "solfege": "レ♭"
+      }
+    },
+    {
+      "midi": 70,
+      "velocity": 44,
+      "offsetMs": 0.0,
+      "durationMs": 2045.93,
+      "track": 1,
+      "name": {
+        "en": "Bb4",
+        "ja": "変ロ",
+        "solfege": "シ♭"
+      }
+    }
+  ],
+  "label": {
+    "en": "Gb2+Db3+Bb4",
+    "ja": "変ト＋変ニ＋変ロ",
+    "solfege": "ソ♭＋レ♭＋シ♭"
+  },
+  "midiKeySignature": "Gb",
+  "catalogKey": "Gb",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 2598
+}

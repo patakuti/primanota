@@ -1,0 +1,43 @@
+{
+  "id": "mozart_sonata_facile_1",
+  "t0Sec": 0.0,
+  "isChord": true,
+  "notes": [
+    {
+      "midi": 60,
+      "velocity": 40,
+      "offsetMs": 0.0,
+      "durationMs": 219.72,
+      "track": 2,
+      "name": {
+        "en": "C4",
+        "ja": "ハ",
+        "solfege": "ド"
+      }
+    },
+    {
+      "midi": 72,
+      "velocity": 60,
+      "offsetMs": 0.0,
+      "durationMs": 878.86,
+      "track": 1,
+      "name": {
+        "en": "C5",
+        "ja": "ハ",
+        "solfege": "ド"
+      }
+    }
+  ],
+  "label": {
+    "en": "C4+C5",
+    "ja": "ハ＋ハ",
+    "solfege": "ド＋ド"
+  },
+  "midiKeySignature": "C",
+  "catalogKey": "C",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 2714
+}

@@ -1,0 +1,55 @@
+{
+  "id": "beethoven_moonlight_1",
+  "t0Sec": 0.0,
+  "isChord": true,
+  "notes": [
+    {
+      "midi": 37,
+      "velocity": 35,
+      "offsetMs": 0.0,
+      "durationMs": 4719.81,
+      "track": 3,
+      "name": {
+        "en": "C#2",
+        "ja": "嬰ハ",
+        "solfege": "ド♯"
+      }
+    },
+    {
+      "midi": 49,
+      "velocity": 35,
+      "offsetMs": 0.0,
+      "durationMs": 4719.81,
+      "track": 3,
+      "name": {
+        "en": "C#3",
+        "ja": "嬰ハ",
+        "solfege": "ド♯"
+      }
+    },
+    {
+      "midi": 56,
+      "velocity": 33,
+      "offsetMs": 0.0,
+      "durationMs": 404.12,
+      "track": 2,
+      "name": {
+        "en": "G#3",
+        "ja": "嬰ト",
+        "solfege": "ソ♯"
+      }
+    }
+  ],
+  "label": {
+    "en": "C#2+C#3+G#3",
+    "ja": "嬰ハ＋嬰ハ＋嬰ト",
+    "solfege": "ド♯＋ド♯＋ソ♯"
+  },
+  "midiKeySignature": "E",
+  "catalogKey": "c#",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 1144
+}

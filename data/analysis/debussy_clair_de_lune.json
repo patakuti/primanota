@@ -1,0 +1,43 @@
+{
+  "id": "debussy_clair_de_lune",
+  "t0Sec": 0.3,
+  "isChord": true,
+  "notes": [
+    {
+      "midi": 65,
+      "velocity": 36,
+      "offsetMs": 0.0,
+      "durationMs": 4048.61,
+      "track": 2,
+      "name": {
+        "en": "F4",
+        "ja": "ヘ",
+        "solfege": "ファ"
+      }
+    },
+    {
+      "midi": 68,
+      "velocity": 43,
+      "offsetMs": 0.0,
+      "durationMs": 4048.61,
+      "track": 2,
+      "name": {
+        "en": "Ab4",
+        "ja": "変イ",
+        "solfege": "ラ♭"
+      }
+    }
+  ],
+  "label": {
+    "en": "F4+Ab4",
+    "ja": "ヘ＋変イ",
+    "solfege": "ファ＋ラ♭"
+  },
+  "midiKeySignature": "Db",
+  "catalogKey": "Db",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 1466
+}

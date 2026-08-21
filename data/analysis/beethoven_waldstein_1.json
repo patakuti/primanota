@@ -1,0 +1,67 @@
+{
+  "id": "beethoven_waldstein_1",
+  "t0Sec": 0.0,
+  "isChord": true,
+  "notes": [
+    {
+      "midi": 36,
+      "velocity": 22,
+      "offsetMs": 186.95,
+      "durationMs": 140.21,
+      "track": 2,
+      "name": {
+        "en": "C2",
+        "ja": "ハ",
+        "solfege": "ド"
+      }
+    },
+    {
+      "midi": 43,
+      "velocity": 26,
+      "offsetMs": 186.95,
+      "durationMs": 140.21,
+      "track": 2,
+      "name": {
+        "en": "G2",
+        "ja": "ト",
+        "solfege": "ソ"
+      }
+    },
+    {
+      "midi": 48,
+      "velocity": 28,
+      "offsetMs": 186.95,
+      "durationMs": 140.21,
+      "track": 1,
+      "name": {
+        "en": "C3",
+        "ja": "ハ",
+        "solfege": "ド"
+      }
+    },
+    {
+      "midi": 52,
+      "velocity": 33,
+      "offsetMs": 186.95,
+      "durationMs": 140.21,
+      "track": 1,
+      "name": {
+        "en": "E3",
+        "ja": "ホ",
+        "solfege": "ミ"
+      }
+    }
+  ],
+  "label": {
+    "en": "C2+G2+C3+E3",
+    "ja": "ハ＋ト＋ハ＋ホ",
+    "solfege": "ド＋ソ＋ド＋ミ"
+  },
+  "midiKeySignature": "C",
+  "catalogKey": "C",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": true,
+  "overrideReason": "Auto extraction (ONSET_WINDOW=50ms) caught only an isolated bass note (C2, MIDI 36) at t=0; the rest of the chord (G2/C3/E3) starts 187ms later in this specific transcription. Multiple sources describe the Waldstein's opening as \"soft, rapidly repeating chords\" (not an isolated bass note), so the full first chord is used as the quiz answer. Confidence: medium (based on secondary sources describing the passage as chordal; not verified against the printed score or by listening to this exact MIDI transcription).",
+  "totalNotesInFile": 8576
+}

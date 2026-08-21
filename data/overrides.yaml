@@ -1,0 +1,20 @@
+# Manual corrections to the automatic onset extraction (02_design.md 3.4).
+# Applied by tools/analyze_midi.py after the raw ONSET_WINDOW grouping.
+#
+# Each entry's `onset.midis` replaces the auto-detected onset group with a
+# different set of MIDI note numbers, looked up from the same MIDI file
+# (the actual note-on events found nearby in time -- never fabricated
+# pitches). `reason` documents why, including source and confidence.
+
+- id: beethoven_waldstein_1
+  onset:
+    midis: [36, 43, 48, 52]
+  reason: >
+    Auto extraction (ONSET_WINDOW=50ms) caught only an isolated bass note
+    (C2, MIDI 36) at t=0; the rest of the chord (G2/C3/E3) starts 187ms
+    later in this specific transcription. Multiple sources describe the
+    Waldstein's opening as "soft, rapidly repeating chords" (not an
+    isolated bass note), so the full first chord is used as the quiz
+    answer. Confidence: medium (based on secondary sources describing the
+    passage as chordal; not verified against the printed score or by
+    listening to this exact MIDI transcription).

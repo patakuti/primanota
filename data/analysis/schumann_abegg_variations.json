@@ -1,0 +1,43 @@
+{
+  "id": "schumann_abegg_variations",
+  "t0Sec": 0.75,
+  "isChord": true,
+  "notes": [
+    {
+      "midi": 69,
+      "velocity": 45,
+      "offsetMs": 0.0,
+      "durationMs": 517.24,
+      "track": 1,
+      "name": {
+        "en": "A4",
+        "ja": "イ",
+        "solfege": "ラ"
+      }
+    },
+    {
+      "midi": 81,
+      "velocity": 56,
+      "offsetMs": 0.0,
+      "durationMs": 517.24,
+      "track": 1,
+      "name": {
+        "en": "A5",
+        "ja": "イ",
+        "solfege": "ラ"
+      }
+    }
+  ],
+  "label": {
+    "en": "A4+A5",
+    "ja": "イ＋イ",
+    "solfege": "ラ＋ラ"
+  },
+  "midiKeySignature": "F",
+  "catalogKey": "F",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 5611
+}

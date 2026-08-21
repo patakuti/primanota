@@ -1,0 +1,31 @@
+{
+  "id": "mozart_rondo_alla_turca",
+  "t0Sec": 0.3974,
+  "isChord": false,
+  "notes": [
+    {
+      "midi": 71,
+      "velocity": 66,
+      "offsetMs": 0.0,
+      "durationMs": 99.34,
+      "track": 1,
+      "name": {
+        "en": "B4",
+        "ja": "ロ",
+        "solfege": "シ"
+      }
+    }
+  ],
+  "label": {
+    "en": "B4",
+    "ja": "ロ",
+    "solfege": "シ"
+  },
+  "midiKeySignature": "C",
+  "catalogKey": "a",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 2811
+}

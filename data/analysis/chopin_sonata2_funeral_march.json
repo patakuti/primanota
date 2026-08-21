@@ -1,0 +1,79 @@
+{
+  "id": "chopin_sonata2_funeral_march",
+  "t0Sec": 0.0,
+  "isChord": true,
+  "notes": [
+    {
+      "midi": 34,
+      "velocity": 28,
+      "offsetMs": 0.0,
+      "durationMs": 1044.39,
+      "track": 2,
+      "name": {
+        "en": "Bb1",
+        "ja": "変ロ",
+        "solfege": "シ♭"
+      }
+    },
+    {
+      "midi": 41,
+      "velocity": 28,
+      "offsetMs": 0.0,
+      "durationMs": 1044.39,
+      "track": 2,
+      "name": {
+        "en": "F2",
+        "ja": "ヘ",
+        "solfege": "ファ"
+      }
+    },
+    {
+      "midi": 46,
+      "velocity": 34,
+      "offsetMs": 0.0,
+      "durationMs": 1044.39,
+      "track": 2,
+      "name": {
+        "en": "Bb2",
+        "ja": "変ロ",
+        "solfege": "シ♭"
+      }
+    },
+    {
+      "midi": 53,
+      "velocity": 34,
+      "offsetMs": 0.0,
+      "durationMs": 1044.39,
+      "track": 1,
+      "name": {
+        "en": "F3",
+        "ja": "ヘ",
+        "solfege": "ファ"
+      }
+    },
+    {
+      "midi": 58,
+      "velocity": 40,
+      "offsetMs": 0.0,
+      "durationMs": 1044.39,
+      "track": 1,
+      "name": {
+        "en": "Bb3",
+        "ja": "変ロ",
+        "solfege": "シ♭"
+      }
+    }
+  ],
+  "label": {
+    "en": "Bb1+F2+Bb2+F3+Bb3",
+    "ja": "変ロ＋ヘ＋変ロ＋ヘ＋変ロ",
+    "solfege": "シ♭＋ファ＋シ♭＋ファ＋シ♭"
+  },
+  "midiKeySignature": "Db",
+  "catalogKey": "bb",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 2323
+}

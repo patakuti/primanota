@@ -1,0 +1,43 @@
+{
+  "id": "chopin_fantaisie_impromptu",
+  "t0Sec": 0.0,
+  "isChord": true,
+  "notes": [
+    {
+      "midi": 44,
+      "velocity": 79,
+      "offsetMs": 0.0,
+      "durationMs": 2730.38,
+      "track": 2,
+      "name": {
+        "en": "G#2",
+        "ja": "嬰ト",
+        "solfege": "ソ♯"
+      }
+    },
+    {
+      "midi": 56,
+      "velocity": 79,
+      "offsetMs": 0.0,
+      "durationMs": 2730.38,
+      "track": 2,
+      "name": {
+        "en": "G#3",
+        "ja": "嬰ト",
+        "solfege": "ソ♯"
+      }
+    }
+  ],
+  "label": {
+    "en": "G#2+G#3",
+    "ja": "嬰ト＋嬰ト",
+    "solfege": "ソ♯＋ソ♯"
+  },
+  "midiKeySignature": "E",
+  "catalogKey": "c#",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 3050
+}

@@ -1,0 +1,43 @@
+{
+  "id": "bach_wtc1_prelude_fugue_847",
+  "t0Sec": 0.0031,
+  "isChord": true,
+  "notes": [
+    {
+      "midi": 48,
+      "velocity": 88,
+      "offsetMs": 0.0,
+      "durationMs": 136.17,
+      "track": 2,
+      "name": {
+        "en": "C3",
+        "ja": "ハ",
+        "solfege": "ド"
+      }
+    },
+    {
+      "midi": 72,
+      "velocity": 96,
+      "offsetMs": 0.0,
+      "durationMs": 136.17,
+      "track": 1,
+      "name": {
+        "en": "C5",
+        "ja": "ハ",
+        "solfege": "ド"
+      }
+    }
+  ],
+  "label": {
+    "en": "C3+C5",
+    "ja": "ハ＋ハ",
+    "solfege": "ド＋ド"
+  },
+  "midiKeySignature": "Eb",
+  "catalogKey": "c",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 1844
+}

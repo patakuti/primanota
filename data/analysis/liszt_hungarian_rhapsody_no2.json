@@ -1,0 +1,33 @@
+{
+  "id": "liszt_hungarian_rhapsody_no2",
+  "t0Sec": 1.1342,
+  "isChord": false,
+  "notes": [
+    {
+      "midi": 61,
+      "velocity": 77,
+      "offsetMs": 0.0,
+      "durationMs": 172.13,
+      "track": 1,
+      "name": {
+        "en": "C#4",
+        "ja": "嬰ハ",
+        "solfege": "ド♯"
+      }
+    }
+  ],
+  "label": {
+    "en": "C#4",
+    "ja": "嬰ハ",
+    "solfege": "ド♯"
+  },
+  "midiKeySignature": "E",
+  "catalogKey": "c#",
+  "keyMatchesMidi": true,
+  "warnings": [
+    "leading_silence"
+  ],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 6752
+}

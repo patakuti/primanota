@@ -1,0 +1,45 @@
+{
+  "id": "beethoven_appassionata_1",
+  "t0Sec": 1.6282,
+  "isChord": true,
+  "notes": [
+    {
+      "midi": 36,
+      "velocity": 27,
+      "offsetMs": 0.0,
+      "durationMs": 518.64,
+      "track": 2,
+      "name": {
+        "en": "C2",
+        "ja": "ハ",
+        "solfege": "ド"
+      }
+    },
+    {
+      "midi": 60,
+      "velocity": 35,
+      "offsetMs": 0.0,
+      "durationMs": 518.64,
+      "track": 1,
+      "name": {
+        "en": "C4",
+        "ja": "ハ",
+        "solfege": "ド"
+      }
+    }
+  ],
+  "label": {
+    "en": "C2+C4",
+    "ja": "ハ＋ハ",
+    "solfege": "ド＋ド"
+  },
+  "midiKeySignature": "Ab",
+  "catalogKey": "f",
+  "keyMatchesMidi": true,
+  "warnings": [
+    "leading_silence"
+  ],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 6377
+}

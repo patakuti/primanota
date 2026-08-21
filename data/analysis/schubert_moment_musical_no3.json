@@ -1,0 +1,31 @@
+{
+  "id": "schubert_moment_musical_no3",
+  "t0Sec": 0.0,
+  "isChord": false,
+  "notes": [
+    {
+      "midi": 53,
+      "velocity": 34,
+      "offsetMs": 0.0,
+      "durationMs": 112.88,
+      "track": 2,
+      "name": {
+        "en": "F3",
+        "ja": "ヘ",
+        "solfege": "ファ"
+      }
+    }
+  ],
+  "label": {
+    "en": "F3",
+    "ja": "ヘ",
+    "solfege": "ファ"
+  },
+  "midiKeySignature": "Ab",
+  "catalogKey": "f",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 1058
+}

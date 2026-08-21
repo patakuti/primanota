@@ -1,0 +1,43 @@
+{
+  "id": "liszt_la_campanella",
+  "t0Sec": 0.375,
+  "isChord": true,
+  "notes": [
+    {
+      "midi": 63,
+      "velocity": 24,
+      "offsetMs": 0.0,
+      "durationMs": 281.25,
+      "track": 2,
+      "name": {
+        "en": "D#4",
+        "ja": "嬰ニ",
+        "solfege": "レ♯"
+      }
+    },
+    {
+      "midi": 75,
+      "velocity": 28,
+      "offsetMs": 0.0,
+      "durationMs": 281.25,
+      "track": 2,
+      "name": {
+        "en": "D#5",
+        "ja": "嬰ニ",
+        "solfege": "レ♯"
+      }
+    }
+  ],
+  "label": {
+    "en": "D#4+D#5",
+    "ja": "嬰ニ＋嬰ニ",
+    "solfege": "レ♯＋レ♯"
+  },
+  "midiKeySignature": "B",
+  "catalogKey": "g#",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 4143
+}

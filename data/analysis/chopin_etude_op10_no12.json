@@ -1,0 +1,79 @@
+{
+  "id": "chopin_etude_op10_no12",
+  "t0Sec": 0.0041,
+  "isChord": true,
+  "notes": [
+    {
+      "midi": 71,
+      "velocity": 94,
+      "offsetMs": 0.0,
+      "durationMs": 787.73,
+      "track": 1,
+      "name": {
+        "en": "B4",
+        "ja": "ロ",
+        "solfege": "シ"
+      }
+    },
+    {
+      "midi": 74,
+      "velocity": 94,
+      "offsetMs": 0.0,
+      "durationMs": 787.73,
+      "track": 1,
+      "name": {
+        "en": "D5",
+        "ja": "ニ",
+        "solfege": "レ"
+      }
+    },
+    {
+      "midi": 77,
+      "velocity": 94,
+      "offsetMs": 0.0,
+      "durationMs": 787.73,
+      "track": 1,
+      "name": {
+        "en": "F5",
+        "ja": "ヘ",
+        "solfege": "ファ"
+      }
+    },
+    {
+      "midi": 79,
+      "velocity": 94,
+      "offsetMs": 0.0,
+      "durationMs": 787.73,
+      "track": 1,
+      "name": {
+        "en": "G5",
+        "ja": "ト",
+        "solfege": "ソ"
+      }
+    },
+    {
+      "midi": 83,
+      "velocity": 103,
+      "offsetMs": 0.0,
+      "durationMs": 787.73,
+      "track": 1,
+      "name": {
+        "en": "B5",
+        "ja": "ロ",
+        "solfege": "シ"
+      }
+    }
+  ],
+  "label": {
+    "en": "B4+D5+F5+G5+B5",
+    "ja": "ロ＋ニ＋ヘ＋ト＋ロ",
+    "solfege": "シ＋レ＋ファ＋ソ＋シ"
+  },
+  "midiKeySignature": "Eb",
+  "catalogKey": "c",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 2084
+}

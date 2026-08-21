@@ -1,0 +1,33 @@
+{
+  "id": "liszt_liebestraum_no3",
+  "t0Sec": 1.8479,
+  "isChord": false,
+  "notes": [
+    {
+      "midi": 51,
+      "velocity": 44,
+      "offsetMs": 0.0,
+      "durationMs": 468.49,
+      "track": 2,
+      "name": {
+        "en": "Eb3",
+        "ja": "変ホ",
+        "solfege": "ミ♭"
+      }
+    }
+  ],
+  "label": {
+    "en": "Eb3",
+    "ja": "変ホ",
+    "solfege": "ミ♭"
+  },
+  "midiKeySignature": "Ab",
+  "catalogKey": "Ab",
+  "keyMatchesMidi": true,
+  "warnings": [
+    "leading_silence"
+  ],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 1885
+}

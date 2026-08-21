@@ -1,0 +1,237 @@
+# Selected pieces for PrimaNota (25 pieces / 8 composers).
+# Selected from tools/catalog_raw.yaml, favoring famous titled works
+# (01_requirements.md: "有名な標題付き曲"中心).
+#
+# `key` is the piece's home key as commonly documented (used to decide
+# sharp/flat spelling of the opening note). It is cross-checked in
+# analyze_midi.py against the MIDI file's own key_signature meta event;
+# the measured MIDI value wins on mismatch (see 02_design.md, CLAUDE.md
+# "推測に基づくデバッグNG"). `key: null` means: no confidently-documented
+# single key for this piece — rely entirely on the MIDI's own meta event.
+
+- id: chopin_etude_op10_no12
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Étude Op.10 No.12 in C minor \"Revolutionary\""
+  title_ja: "練習曲 作品10-12 ハ短調「革命」"
+  key: "c"
+  url: "http://piano-midi.de/midis/chopin/chpn_op10_e12.mid"
+
+- id: chopin_prelude_op28_no15
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Prelude Op.28 No.15 in D-flat major \"Raindrop\""
+  title_ja: "前奏曲 作品28-15 変ニ長調「雨だれ」"
+  key: "Db"
+  url: "http://piano-midi.de/midis/chopin/chpn-p15.mid"
+
+- id: chopin_fantaisie_impromptu
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Fantaisie-Impromptu Op.66 in C-sharp minor"
+  title_ja: "幻想即興曲 作品66 嬰ハ短調"
+  key: "c#"
+  url: "http://piano-midi.de/midis/chopin/chpn_op66.mid"
+
+- id: chopin_sonata2_funeral_march
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Piano Sonata No.2 Op.35, 3rd mvt \"Funeral March\""
+  title_ja: "ピアノソナタ第2番 作品35 第3楽章「葬送行進曲」"
+  key: "bb"
+  url: "http://piano-midi.de/midis/chopin/chpn_op35_3.mid"
+
+- id: chopin_nocturne_op27_no2
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Nocturne Op.27 No.2 in D-flat major"
+  title_ja: "夜想曲 作品27-2 変ニ長調"
+  key: "Db"
+  url: "http://piano-midi.de/midis/chopin/chpn_op27_2.mid"
+
+- id: beethoven_fur_elise
+  composer_en: "Ludwig van Beethoven"
+  composer_ja: "ルートヴィヒ・ヴァン・ベートーヴェン"
+  title_en: "Für Elise, WoO 59 in A minor"
+  title_ja: "エリーゼのために イ短調"
+  key: "a"
+  url: "http://piano-midi.de/midis/beethoven/elise.mid"
+
+- id: beethoven_pathetique_1
+  composer_en: "Ludwig van Beethoven"
+  composer_ja: "ルートヴィヒ・ヴァン・ベートーヴェン"
+  title_en: "Piano Sonata No.8 Op.13 \"Pathétique\", 1st mvt"
+  title_ja: "ピアノソナタ第8番 作品13「悲愴」第1楽章"
+  key: "c"
+  url: "http://piano-midi.de/midis/beethoven/pathetique_1.mid"
+
+- id: beethoven_moonlight_1
+  composer_en: "Ludwig van Beethoven"
+  composer_ja: "ルートヴィヒ・ヴァン・ベートーヴェン"
+  title_en: "Piano Sonata No.14 Op.27/2 \"Moonlight\", 1st mvt"
+  title_ja: "ピアノソナタ第14番 作品27-2「月光」第1楽章"
+  key: "c#"
+  url: "http://piano-midi.de/midis/beethoven/mond_1.mid"
+
+- id: beethoven_waldstein_1
+  composer_en: "Ludwig van Beethoven"
+  composer_ja: "ルートヴィヒ・ヴァン・ベートーヴェン"
+  title_en: "Piano Sonata No.21 Op.53 \"Waldstein\", 1st mvt"
+  title_ja: "ピアノソナタ第21番 作品53「ワルトシュタイン」第1楽章"
+  key: "C"
+  url: "http://piano-midi.de/midis/beethoven/waldstein_1.mid"
+
+- id: beethoven_appassionata_1
+  composer_en: "Ludwig van Beethoven"
+  composer_ja: "ルートヴィヒ・ヴァン・ベートーヴェン"
+  title_en: "Piano Sonata No.23 Op.57 \"Appassionata\", 1st mvt"
+  title_ja: "ピアノソナタ第23番 作品57「熱情」第1楽章"
+  key: "f"
+  url: "http://piano-midi.de/midis/beethoven/appass_1.mid"
+
+- id: schubert_impromptu_d899_no2
+  composer_en: "Franz Schubert"
+  composer_ja: "フランツ・シューベルト"
+  title_en: "Impromptu D.899 (Op.90) No.2 in E-flat major"
+  title_ja: "即興曲 D.899（作品90）第2番 変ホ長調"
+  key: "Eb"
+  url: "http://piano-midi.de/midis/schubert/schuim-2.mid"
+
+- id: schubert_impromptu_d899_no3
+  composer_en: "Franz Schubert"
+  composer_ja: "フランツ・シューベルト"
+  title_en: "Impromptu D.899 (Op.90) No.3 in G-flat major"
+  title_ja: "即興曲 D.899（作品90）第3番 変ト長調"
+  key: "Gb"
+  url: "http://piano-midi.de/midis/schubert/schuim-3.mid"
+
+- id: schubert_moment_musical_no3
+  composer_en: "Franz Schubert"
+  composer_ja: "フランツ・シューベルト"
+  title_en: "Moment Musical D.780 (Op.94) No.3 in F minor"
+  title_ja: "楽興の時 D.780（作品94）第3番 ヘ短調"
+  key: "f"
+  url: "http://piano-midi.de/midis/schubert/schumm-3.mid"
+
+- id: debussy_clair_de_lune
+  composer_en: "Claude Debussy"
+  composer_ja: "クロード・ドビュッシー"
+  title_en: "Clair de Lune (Suite bergamasque)"
+  title_ja: "月の光（ベルガマスク組曲より）"
+  key: "Db"
+  url: "http://piano-midi.de/midis/debussy/deb_clai.mid"
+
+- id: debussy_prelude_bergamasque
+  composer_en: "Claude Debussy"
+  composer_ja: "クロード・ドビュッシー"
+  title_en: "Prélude (Suite bergamasque)"
+  title_ja: "プレリュード（ベルガマスク組曲より）"
+  # No single confidently-documented key for this movement (harmonically
+  # free); "F" is measured directly from the MIDI's key_signature meta
+  # event (1 flat), not assumed. See tools/report.md.
+  key: "F"
+  url: "http://piano-midi.de/midis/debussy/deb_prel.mid"
+
+- id: liszt_liebestraum_no3
+  composer_en: "Franz Liszt"
+  composer_ja: "フランツ・リスト"
+  title_en: "Liebestraum No.3 in A-flat major"
+  title_ja: "愛の夢 第3番 変イ長調"
+  key: "Ab"
+  url: "http://piano-midi.de/midis/liszt/liz_liebestraum.mid"
+
+- id: liszt_la_campanella
+  composer_en: "Franz Liszt"
+  composer_ja: "フランツ・リスト"
+  title_en: "Grandes Études de Paganini No.3 \"La Campanella\""
+  title_ja: "パガニーニによる大練習曲 第3番「ラ・カンパネラ」"
+  key: "g#"
+  url: "http://piano-midi.de/midis/liszt/liz_et3.mid"
+
+- id: liszt_hungarian_rhapsody_no2
+  composer_en: "Franz Liszt"
+  composer_ja: "フランツ・リスト"
+  title_en: "Hungarian Rhapsody No.2 in C-sharp minor"
+  title_ja: "ハンガリー狂詩曲 第2番 嬰ハ短調"
+  key: "c#"
+  url: "http://piano-midi.de/midis/liszt/liz_rhap02.mid"
+
+- id: mozart_rondo_alla_turca
+  composer_en: "Wolfgang Amadeus Mozart"
+  composer_ja: "ヴォルフガング・アマデウス・モーツァルト"
+  title_en: "Piano Sonata No.11 KV 331, 3rd mvt \"Rondo alla Turca\""
+  title_ja: "ピアノソナタ第11番 K.331 第3楽章「トルコ行進曲」"
+  key: "a"
+  url: "http://piano-midi.de/midis/mozart/mz_331_3.mid"
+
+- id: mozart_sonata_facile_1
+  composer_en: "Wolfgang Amadeus Mozart"
+  composer_ja: "ヴォルフガング・アマデウス・モーツァルト"
+  title_en: "Piano Sonata No.16 KV 545 \"Sonata facile\", 1st mvt"
+  title_ja: "ピアノソナタ第16番 K.545「ソナタ・ファチーレ」第1楽章"
+  key: "C"
+  url: "http://piano-midi.de/midis/mozart/mz_545_1.mid"
+
+- id: schumann_kinderszenen_no1
+  composer_en: "Robert Schumann"
+  composer_ja: "ロベルト・シューマン"
+  title_en: "Kinderszenen Op.15 No.1 \"Von fremden Ländern und Menschen\""
+  title_ja: "子供の情景 作品15-1「見知らぬ国と人々について」"
+  key: "G"
+  url: "http://piano-midi.de/midis/schumann/scn15_1.mid"
+
+- id: schumann_traumerei
+  composer_en: "Robert Schumann"
+  composer_ja: "ロベルト・シューマン"
+  title_en: "Kinderszenen Op.15 No.7 \"Träumerei\""
+  title_ja: "子供の情景 作品15-7「トロイメライ」"
+  key: "F"
+  url: "http://piano-midi.de/midis/schumann/scn15_7.mid"
+
+- id: chopin_ballade_no1
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Ballade No.1 Op.23 in G minor"
+  title_ja: "バラード第1番 作品23 ト短調"
+  key: "g"
+  url: "http://piano-midi.de/midis/chopin/chpn_op23.mid"
+
+- id: schubert_impromptu_d935_no3
+  composer_en: "Franz Schubert"
+  composer_ja: "フランツ・シューベルト"
+  title_en: "Impromptu D.935 (Op.142) No.3 in B-flat major"
+  title_ja: "即興曲 D.935（作品142）第3番 変ロ長調"
+  key: "Bb"
+  url: "http://piano-midi.de/midis/schubert/schubert_d935_3.mid"
+
+- id: schumann_abegg_variations
+  composer_en: "Robert Schumann"
+  composer_ja: "ロベルト・シューマン"
+  title_en: "Variations on the name \"Abegg\", Op.1"
+  title_ja: "『アベック』の名による変奏曲 作品1"
+  key: "F"
+  url: "http://piano-midi.de/midis/schumann/schum_abegg.mid"
+
+- id: bach_wtc1_prelude_fugue_846
+  composer_en: "Johann Sebastian Bach"
+  composer_ja: "ヨハン・ゼバスティアン・バッハ"
+  title_en: "The Well-Tempered Clavier I, Prelude and Fugue in C major, BWV 846"
+  title_ja: "平均律クラヴィーア曲集 第1巻 前奏曲とフーガ ハ長調 BWV 846"
+  key: "C"
+  url: "http://piano-midi.de/midis/bach/bach_846.mid"
+
+- id: bach_wtc1_prelude_fugue_847
+  composer_en: "Johann Sebastian Bach"
+  composer_ja: "ヨハン・ゼバスティアン・バッハ"
+  title_en: "The Well-Tempered Clavier I, Prelude and Fugue in C minor, BWV 847"
+  title_ja: "平均律クラヴィーア曲集 第1巻 前奏曲とフーガ ハ短調 BWV 847"
+  key: "c"
+  url: "http://piano-midi.de/midis/bach/bach_847.mid"
+
+- id: bach_wtc1_prelude_fugue_850
+  composer_en: "Johann Sebastian Bach"
+  composer_ja: "ヨハン・ゼバスティアン・バッハ"
+  title_en: "The Well-Tempered Clavier I, Prelude and Fugue in D major, BWV 850"
+  title_ja: "平均律クラヴィーア曲集 第1巻 前奏曲とフーガ ニ長調 BWV 850"
+  key: "D"
+  url: "http://piano-midi.de/midis/bach/bach_850.mid"

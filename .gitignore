@@ -1,0 +1,9 @@
+01_requirements.md
+02_design.md
+03_plan.md
+CLAUDE.md
+data/midi/
+tools/.venv/
+tools/__pycache__/
+web/node_modules/
+web/dist/

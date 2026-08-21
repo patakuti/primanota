@@ -21,8 +21,6 @@ Webアプリの実行時にMIDIファイルを扱うことはありません。
 
 ## セットアップ
 
-（実装が進み次第、更新します）
-
 ### 前処理（tools/）
 
 ```
@@ -32,12 +30,23 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+MIDIのダウンロードからデータセット生成までは以下の順で実行します
+（`data/midi/` はGit管理外のため、手元で再取得が必要です）。
+
+```
+python3 fetch_catalog.py      # piano-midi.de から曲目一覧を取得 -> catalog_raw.yaml
+python3 download_midi.py      # catalog.yaml に載っている28曲をダウンロード
+python3 analyze_midi.py       # 冒頭音を抽出 -> report.md
+python3 build_dataset.py      # web/src/data/pieces.json を生成
+```
+
 ### Webアプリ（web/）
 
 ```
 cd web
 npm install
-npm run dev
+npm run dev      # 開発サーバー
+npm run build    # 本番ビルド (dist/)
 ```
 
 ## データソースとライセンス

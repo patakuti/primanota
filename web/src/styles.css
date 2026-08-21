@@ -1,0 +1,155 @@
+:root {
+  --color-bg: #ffffff;
+  --color-fg: #1a1a1a;
+  --color-fg-muted: #666666;
+  --color-accent: #0088bb;
+  --color-panel-bg: #f5f5f5;
+  --color-border: #dddddd;
+  --color-key-white: #ffffff;
+  --color-key-black: #222222;
+  --color-key-border: #333333;
+  --color-key-highlight: #ffd54f;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1a1a1a;
+    --color-fg: #eeeeee;
+    --color-fg-muted: #aaaaaa;
+    --color-accent: #4fc3f7;
+    --color-panel-bg: #262626;
+    --color-border: #3a3a3a;
+    --color-key-white: #eeeeee;
+    --color-key-black: #111111;
+    --color-key-border: #000000;
+    --color-key-highlight: #ffb300;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  min-height: 100vh;
+}
+
+#app {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.app-header {
+  padding: 24px 0 8px;
+  text-align: center;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.tagline {
+  margin: 4px 0 0;
+  color: var(--color-fg-muted);
+}
+
+main {
+  display: grid;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.panel {
+  background: var(--color-panel-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+#quiz-area {
+  text-align: center;
+}
+
+.quiz-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+button {
+  min-height: 44px;
+  padding: 8px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-fg);
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: var(--color-accent);
+}
+
+#keyboard-area {
+  overflow-x: auto;
+}
+
+#keyboard {
+  min-height: 160px;
+}
+
+.keyboard-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--color-fg-muted);
+}
+
+#controls-area {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+#answer-panel[hidden] {
+  display: none;
+}
+
+#answer-details {
+  margin: 0 0 12px;
+}
+
+#answer-details dt {
+  font-weight: bold;
+  color: var(--color-fg-muted);
+}
+
+#answer-details dd {
+  margin: 0 0 8px;
+}
+
+#score-display {
+  overflow-x: auto;
+}
+
+.app-footer {
+  padding: 16px 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--color-fg-muted);
+}

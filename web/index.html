@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrimaNota</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header">
+        <h1>PrimaNota</h1>
+        <p class="tagline">冒頭の一音から、名曲を当てる。</p>
+      </header>
+
+      <main>
+        <section id="quiz-area" class="panel">
+          <p id="quiz-progress"></p>
+          <div class="quiz-controls">
+            <button id="play-onset-btn" type="button">冒頭の音を聴く</button>
+            <button id="replay-onset-btn" type="button">もう一度</button>
+          </div>
+        </section>
+
+        <section id="keyboard-area" class="panel">
+          <div id="keyboard"></div>
+          <label class="keyboard-option">
+            <input id="show-note-names" type="checkbox" />
+            音名を表示
+          </label>
+        </section>
+
+        <section id="controls-area" class="panel">
+          <button id="reveal-answer-btn" type="button">回答を見る</button>
+          <button id="next-piece-btn" type="button">次の問題 →</button>
+        </section>
+
+        <section id="answer-panel" class="panel" hidden>
+          <dl id="answer-details"></dl>
+          <div id="score-display"></div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <p id="credit"></p>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

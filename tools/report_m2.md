@@ -84,12 +84,46 @@ indicate the piece needs more than 2 measures extracted to reach its
 audible opening. Flagged for a decision (extend measure count for this
 piece via override, or accept as-is) rather than guessed at.
 
+## Update 2026-08-22: tuplet support added
+
+`score_extract.py` now detects tuplet runs directly: a run of `N`
+consecutive same-voice onsets, evenly spaced (±3 ticks) at a gap that does
+**not** match any standard binary duration, is treated as a tuplet. Each
+note in the run gets its correct printed duration (e.g. eighth) plus a
+`"tuplet": {"numNotes": N, "notesOccupied": M}` field (02_design.md 3.8) for
+M7 to wrap in `VF.Tuplet` later.
+
+**Important caveat, raised by the user**: MIDI timing alone cannot
+distinguish "2 consecutive triplets" from "1 sextuplet" -- both produce
+identical note durations (1/3 beat each), differing only in how the
+printed score brackets/groups them, which isn't recoverable from audio
+timing. The default grouping is triplets (3 notes/bracket). The user
+confirmed that `schubert_impromptu_d899_no3`'s accompaniment is published
+as **sextuplets** (6 notes/bracket), so that piece is special-cased via
+`TUPLET_GROUP_SIZE_OVERRIDES` in `score_extract.py` -- not inferred, since
+it can't be. Any other piece later found to use a non-default tuplet
+grouping in its real published score should be added to that same dict.
+
+Result: all 4 previously-flagged large shortfalls (schubert_impromptu_d899_no2/no3,
+beethoven_moonlight_1) are resolved -- their duration sums now match their
+time signature exactly. Re-running the duration-sum check across all 112
+voice-measures: 97/112 exact, 15 with small (<=0.625 beat) residual
+rounding noise from fast/irregular passages hitting the quantizer's 32nd-note
+grid -- none is a systematic tuplet-type shortfall anymore.
+
+Scope note: this fix only addresses the *duration* undercount. It does
+**not** address `beethoven_moonlight_1`'s sustained-note-under-triplets
+polyphony (a melody note held across a tuplet-only single-voice staff still
+gets truncated to the next onset's start, per the existing single-voice
+simplification -- a separate, pre-existing limitation, unrelated to
+tuplets, not raised by the user this round).
+
 ## Recommendation
 
 Given design doc 3.7's framing (score data is a draft; `overrides.yaml`
-exists precisely for cases like these), proceeding to M3 with these 4
-pieces flagged is consistent with the plan. Suggest deciding on one of:
-- Add triplet support to `score_extract.py` (proper fix, moderate effort)
-- Manually author `score` overrides for the 4 affected pieces
-- Accept the visual glitch for now and revisit during the M7 (score
-  rendering) pass, when it can be checked in an actual browser
+exists precisely for cases like these), the remaining items:
+- `chopin_fantaisie_impromptu`'s empty first-2-measures right hand: still
+  unresolved, still needs a decision (see above)
+- The 15 small residual rounding mismatches: acceptable as draft-quality
+  per design doc; revisit during the M7 (score rendering) pass, when it can
+  be checked in an actual browser

@@ -1578,73 +1578,121 @@
                 "keys": [
                   "g#/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "c#/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "e/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "g#/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "c#/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "e/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "g#/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "c#/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "e/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "g#/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "c#/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "e/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               }
             ],
             "bass": [
@@ -1663,73 +1711,121 @@
                 "keys": [
                   "g#/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "c#/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "e/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "g#/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "c#/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "e/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "g#/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "c#/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "e/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "g#/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "c#/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "e/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               }
             ],
             "bass": [
@@ -2292,55 +2388,91 @@
                 "keys": [
                   "g/5"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "bb/5"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "ab/5"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "g/5"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "f/5"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "eb/5"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "d/5"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "c/5"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "bb/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               }
             ],
             "bass": [
@@ -2422,145 +2554,241 @@
                 "keys": [
                   "bb/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "bb/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "db/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "gb/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "db/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "bb/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "db/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "bb/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "db/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "gb/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "db/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "bb/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "bb/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "bb/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "db/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "gb/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "db/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "bb/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "bb/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "bb/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "db/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "gb/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "db/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "bb/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               }
             ],
             "bass": [
@@ -2593,145 +2821,241 @@
                 "keys": [
                   "bb/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "bb/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "eb/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "gb/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "eb/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "bb/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "eb/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "bb/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "eb/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "gb/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "eb/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "bb/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "gb/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "gb/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "bb/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "eb/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "bb/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "gb/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "bb/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "gb/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "bb/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "eb/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "bb/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               },
               {
                 "keys": [
                   "gb/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 6,
+                  "notesOccupied": 4
+                }
               }
             ],
             "bass": [
@@ -3604,19 +3928,31 @@
                 "keys": [
                   "c#/4"
                 ],
-                "duration": "32"
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "b/3"
                 ],
-                "duration": "32"
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "c#/4"
                 ],
-                "duration": "32"
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               }
             ],
             "bass": [
@@ -4072,38 +4408,62 @@
                   "b/3",
                   "g/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "d/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "g/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "a#/3",
                   "c#/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "e/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "g/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               }
             ]
           },
@@ -4134,38 +4494,62 @@
                   "a/3",
                   "d/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "d/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "f#/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "c/4",
                   "f#/3"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "d/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               },
               {
                 "keys": [
                   "a/4"
                 ],
-                "duration": "16"
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
               }
             ]
           }

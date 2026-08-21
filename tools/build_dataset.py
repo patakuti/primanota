@@ -36,7 +36,7 @@ def build_piece(piece: dict, overrides: dict) -> dict:
     if score_override:
         score = score_override
     else:
-        score = extract_score(mid, piece["key"])
+        score = extract_score(mid, piece["key"], piece_id=piece["id"])
         del score["trebleTracks"]
         del score["bassTracks"]
 

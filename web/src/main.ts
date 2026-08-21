@@ -1,13 +1,9 @@
 import './styles.css';
-import type { Piece, PiecesDataset } from './types.ts';
+import type { PiecesDataset } from './types.ts';
 import piecesData from './data/pieces.json';
 import { noteOff, noteOn, playOnset, resume } from './audio/synth.ts';
 import { Keyboard } from './ui/keyboard.ts';
-
-// NOTE: piece selection here is a temporary stand-in for M4/M5 testing
-// only. The real shuffle-bag quiz flow (state machine, "次の問題") is built
-// in M6 (02_design.md 4.5) and will replace this.
-let currentPiece: Piece;
+import { QuizController } from './ui/quiz.ts';
 
 const KEYBOARD_CLICK_VELOCITY = 90;
 
@@ -21,31 +17,61 @@ function bootstrap(): void {
     creditEl.innerHTML = `MIDI: <a href="${url}" target="_blank" rel="noopener">${source}</a> (${author}) / ${license}`;
   }
 
-  currentPiece = dataset.pieces[Math.floor(Math.random() * dataset.pieces.length)]!;
+  const quiz = new QuizController(dataset.pieces);
 
   const progressEl = document.getElementById('quiz-progress');
-  if (progressEl) {
-    progressEl.textContent = `${dataset.pieces.length}曲を収録（M5テスト中: ${currentPiece.id}）`;
-  }
-
-  const playBtn = document.getElementById('play-onset-btn');
-  const replayBtn = document.getElementById('replay-onset-btn');
-
-  playBtn?.addEventListener('click', async () => {
-    await resume();
-    playOnset(currentPiece.onset.notes);
-  });
-
-  replayBtn?.addEventListener('click', async () => {
-    await resume();
-    playOnset(currentPiece.onset.notes);
-  });
+  const answerPanel = document.getElementById('answer-panel');
+  // Temporary M6 stand-in for M7's real ui/answer.ts (composer/title/score
+  // display + note-name label rendering). Kept minimal on purpose.
+  const answerDetails = document.getElementById('answer-details');
 
   const keyboardContainer = document.getElementById('keyboard');
-  if (keyboardContainer) {
-    const keyboard = new Keyboard(keyboardContainer);
-    keyboard.render();
+  const keyboard = keyboardContainer ? new Keyboard(keyboardContainer) : null;
+  keyboard?.render();
 
+  function renderQuizState(): void {
+    if (progressEl) {
+      progressEl.textContent = `第${quiz.getQuestionNumber()}問（全${dataset.pieces.length}曲）`;
+    }
+    const revealed = quiz.getState() === 'revealed';
+    if (answerPanel) {
+      answerPanel.hidden = !revealed;
+    }
+    if (revealed) {
+      const piece = quiz.getCurrentPiece();
+      if (answerDetails) {
+        answerDetails.innerHTML = `
+          <dt>冒頭の音</dt><dd>${piece.onset.label.ja}（${piece.onset.label.en}）</dd>
+          <dt>作曲家</dt><dd>${piece.composer.ja}</dd>
+          <dt>曲名</dt><dd>${piece.title.ja}<br>${piece.title.en}</dd>
+        `;
+      }
+      keyboard?.highlight(piece.onset.notes.map((n) => n.midi));
+    } else {
+      keyboard?.highlight([]);
+    }
+  }
+
+  async function playCurrentOnset(): Promise<void> {
+    await resume();
+    playOnset(quiz.getCurrentPiece().onset.notes);
+  }
+
+  document.getElementById('play-onset-btn')?.addEventListener('click', playCurrentOnset);
+  document.getElementById('replay-onset-btn')?.addEventListener('click', playCurrentOnset);
+
+  document.getElementById('reveal-answer-btn')?.addEventListener('click', () => {
+    quiz.reveal();
+  });
+
+  document.getElementById('next-piece-btn')?.addEventListener('click', () => {
+    quiz.next();
+  });
+
+  quiz.onChange(renderQuizState);
+  renderQuizState();
+
+  if (keyboard) {
     keyboard.on('press', async (midi) => {
       await resume();
       noteOn(midi, KEYBOARD_CLICK_VELOCITY);
@@ -57,13 +83,6 @@ function bootstrap(): void {
     const showNamesCheckbox = document.getElementById('show-note-names') as HTMLInputElement | null;
     showNamesCheckbox?.addEventListener('change', () => {
       keyboard.setShowNoteNames(showNamesCheckbox.checked);
-    });
-
-    // Temporary M5 test hook: highlight the current piece's onset keys when
-    // revealing the answer. Superseded by the real answer panel in M7.
-    const revealBtn = document.getElementById('reveal-answer-btn');
-    revealBtn?.addEventListener('click', () => {
-      keyboard.highlight(currentPiece.onset.notes.map((n) => n.midi));
     });
   }
 }

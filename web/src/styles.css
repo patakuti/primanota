@@ -167,6 +167,39 @@ button:focus-visible,
   overflow-x: auto;
 }
 
+.playback-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border);
+}
+
+.playback-controls button {
+  min-height: 36px;
+  padding: 4px 14px;
+  font-size: 0.9rem;
+}
+
+.playback-controls button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+#playback-seek {
+  flex: 1 1 160px;
+  min-width: 120px;
+}
+
+#playback-time {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-fg-muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
 .app-footer {
   padding: 16px 0;
   text-align: center;

@@ -37,6 +37,12 @@
         <section id="answer-panel" class="panel" hidden>
           <dl id="answer-details"></dl>
           <div id="score-display"></div>
+          <div id="playback-controls" class="playback-controls">
+            <button id="playback-play-btn" type="button">▶ 再生</button>
+            <button id="playback-stop-btn" type="button" disabled>■ 停止</button>
+            <input id="playback-seek" type="range" min="0" max="0" value="0" step="100" aria-label="再生位置" />
+            <span id="playback-time">0:00 / 0:00</span>
+          </div>
         </section>
       </main>
 

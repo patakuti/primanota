@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "postinstall": "node scripts/copy-worklet.mjs",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
@@ -13,6 +14,7 @@
     "vite": "^8.2.0"
   },
   "dependencies": {
+    "spessasynth_lib": "^4.3.14",
     "vexflow": "^5.0.0"
   }
 }

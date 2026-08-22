@@ -15,6 +15,7 @@ const BLACK_KEY_HEIGHT = 90;
 
 type KeyEventName = 'press' | 'release';
 type KeyListener = (midi: number) => void;
+type SustainListener = (on: boolean) => void;
 
 interface KeyLayout {
   midi: number;
@@ -57,12 +58,36 @@ export class Keyboard {
   private keyElements = new Map<number, SVGRectElement>();
   private labelElements = new Map<number, SVGTextElement>();
   private listeners: Record<KeyEventName, KeyListener[]> = { press: [], release: [] };
+  private sustainListeners: SustainListener[] = [];
   private pressedMidis = new Set<number>();
   private highlightedMidis = new Set<number>();
   private showNoteNames = false;
+  private sustainIndicator: HTMLElement | null = null;
 
   constructor(container: HTMLElement) {
     this.container = container;
+    // Sustain ("damper pedal", 02_design.md 4.4) is a global modifier so it
+    // works the same whether notes come from mouse clicks on the keyboard or
+    // (M11) QWERTY-mapped key presses -- both funnel through this class.
+    document.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Control' && !ev.repeat) this.setSustainIndicator(true);
+    });
+    document.addEventListener('keyup', (ev) => {
+      if (ev.key === 'Control') this.setSustainIndicator(false);
+    });
+    // If the window loses focus while Ctrl is held (e.g. alt-tab), the keyup
+    // never arrives -- release sustain defensively so it can't get stuck on.
+    window.addEventListener('blur', () => this.setSustainIndicator(false));
+  }
+
+  private setSustainIndicator(on: boolean): void {
+    this.sustainIndicator?.classList.toggle('active', on);
+    for (const cb of this.sustainListeners) cb(on);
+  }
+
+  /** Fired when the sustain pedal (Ctrl) is pressed or released. */
+  onSustainChange(cb: SustainListener): void {
+    this.sustainListeners.push(cb);
   }
 
   render(): void {
@@ -82,7 +107,12 @@ export class Keyboard {
       svg.appendChild(this.buildKeyGroup(key));
     }
 
-    this.container.replaceChildren(svg);
+    const indicator = document.createElement('p');
+    indicator.className = 'sustain-indicator';
+    indicator.textContent = 'サスティン中（Ctrl）';
+    this.sustainIndicator = indicator;
+
+    this.container.replaceChildren(svg, indicator);
   }
 
   private buildKeyGroup(key: KeyLayout): SVGGElement {

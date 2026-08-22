@@ -1,7 +1,7 @@
 import './styles.css';
 import type { PiecesDataset } from './types.ts';
 import piecesData from './data/pieces.json';
-import { noteOff, noteOn, playOnset, resume } from './audio/synth.ts';
+import { noteOff, noteOn, playOnset, resume, setSustain, stopAll } from './audio/synth.ts';
 import { Keyboard } from './ui/keyboard.ts';
 import { QuizController } from './ui/quiz.ts';
 import * as answer from './ui/answer.ts';
@@ -56,13 +56,13 @@ function bootstrap(): void {
   }
 
   document.getElementById('play-onset-btn')?.addEventListener('click', playCurrentOnset);
-  document.getElementById('replay-onset-btn')?.addEventListener('click', playCurrentOnset);
 
   document.getElementById('reveal-answer-btn')?.addEventListener('click', () => {
     quiz.reveal();
   });
 
   document.getElementById('next-piece-btn')?.addEventListener('click', () => {
+    stopAll();
     quiz.next();
   });
 
@@ -77,6 +77,7 @@ function bootstrap(): void {
     keyboard.on('release', (midi) => {
       noteOff(midi);
     });
+    keyboard.onSustainChange(setSustain);
 
     const showNamesCheckbox = document.getElementById('show-note-names') as HTMLInputElement | null;
     showNamesCheckbox?.addEventListener('change', () => {

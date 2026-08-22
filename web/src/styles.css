@@ -118,6 +118,18 @@ button:focus-visible,
   min-height: 160px;
 }
 
+.sustain-indicator {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--color-accent);
+  visibility: hidden;
+}
+
+.sustain-indicator.active {
+  visibility: visible;
+}
+
 .keyboard-option {
   display: flex;
   align-items: center;

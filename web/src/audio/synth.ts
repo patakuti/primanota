@@ -39,6 +39,13 @@ let audioCtx: AudioContext | null = null;
 let masterGain: GainNode | null = null;
 const activeVoices = new Map<number, Voice>();
 
+// Sustain pedal emulation (02_design.md 4.3): while engaged, a released note
+// keeps ringing (natural decay continues) instead of being cut short; the
+// set of such "damper-held" notes is released together when the pedal is
+// lifted, mirroring a real piano's damper mechanism.
+let sustainOn = false;
+const sustainedMidis = new Set<number>();
+
 function getContext(): AudioContext {
   if (!audioCtx) {
     audioCtx = new AudioContext();
@@ -139,6 +146,10 @@ export function noteOn(midi: number, velocity: number, whenSec?: number): void {
   const ctx = getContext();
   const startAt = whenSec ?? ctx.currentTime;
 
+  // A fresh press is a newly-held note, not a pedal-held one, even if this
+  // pitch was previously left ringing by the sustain pedal.
+  sustainedMidis.delete(midi);
+
   const existing = activeVoices.get(midi);
   if (existing) {
     stopVoiceEarly(existing, ctx, 0.03);
@@ -194,11 +205,43 @@ export function noteOn(midi: number, velocity: number, whenSec?: number): void {
 
 /** Release a currently-sounding note early (e.g. from a keyboard release). */
 export function noteOff(midi: number): void {
+  if (sustainOn) {
+    // Damper is up: let the note keep ringing until the pedal is released.
+    sustainedMidis.add(midi);
+    return;
+  }
   const ctx = getContext();
   const voice = activeVoices.get(midi);
   if (!voice) return;
   stopVoiceEarly(voice, ctx, RELEASE_SEC);
   activeVoices.delete(midi);
+}
+
+/** Engage/release the sustain ("damper") pedal; see the note above `sustainOn`. */
+export function setSustain(on: boolean): void {
+  if (sustainOn === on) return;
+  sustainOn = on;
+  if (on) return;
+
+  const ctx = getContext();
+  for (const midi of sustainedMidis) {
+    const voice = activeVoices.get(midi);
+    if (voice) {
+      stopVoiceEarly(voice, ctx, RELEASE_SEC);
+      activeVoices.delete(midi);
+    }
+  }
+  sustainedMidis.clear();
+}
+
+/** Immediately silence every currently-sounding note (e.g. stopping playback or switching pieces). */
+export function stopAll(): void {
+  const ctx = getContext();
+  for (const [midi, voice] of activeVoices) {
+    stopVoiceEarly(voice, ctx, 0.03);
+    activeVoices.delete(midi);
+  }
+  sustainedMidis.clear();
 }
 
 /** Play a quiz piece's opening onset: a single note or a (possibly arpeggiated) chord. */

@@ -3,7 +3,7 @@
 // rationale: 11/28 pieces have onset notes below C3, accepted as a known
 // limitation rather than widening the keyboard).
 
-import { isBlackKey, midiToNameEn, midiToNameJa } from '../util/notenames.ts';
+import { isBlackKey, midiToNameEn } from '../util/notenames.ts';
 
 const LOWEST_MIDI = 48; // C3
 const HIGHEST_MIDI = 84; // C6
@@ -143,7 +143,7 @@ export class Keyboard {
   private shiftOctave(direction: -1 | 1): void {
     this.baseMidi = Math.max(MIN_BASE_MIDI, Math.min(MAX_BASE_MIDI, this.baseMidi + direction * 12));
     if (this.octaveIndicator) {
-      this.octaveIndicator.textContent = `基準: ${midiToNameEn(this.baseMidi)}（Z/Xで変更）`;
+      this.octaveIndicator.textContent = `Base: ${midiToNameEn(this.baseMidi)} (Z/X to change)`;
     }
   }
 
@@ -176,12 +176,12 @@ export class Keyboard {
 
     const sustainIndicator = document.createElement('p');
     sustainIndicator.className = 'sustain-indicator';
-    sustainIndicator.textContent = 'サスティン中（Ctrl）';
+    sustainIndicator.textContent = 'Sustain (Ctrl)';
     this.sustainIndicator = sustainIndicator;
 
     const octaveIndicator = document.createElement('p');
     octaveIndicator.className = 'octave-indicator';
-    octaveIndicator.textContent = `基準: ${midiToNameEn(this.baseMidi)}（Z/Xで変更）`;
+    octaveIndicator.textContent = `Base: ${midiToNameEn(this.baseMidi)} (Z/X to change)`;
     this.octaveIndicator = octaveIndicator;
 
     this.container.replaceChildren(svg, octaveIndicator, sustainIndicator);
@@ -192,7 +192,7 @@ export class Keyboard {
     g.setAttribute('class', key.black ? 'key key-black' : 'key key-white');
     g.setAttribute('role', 'button');
     g.setAttribute('tabindex', key.midi === this.focusableMidi ? '0' : '-1');
-    g.setAttribute('aria-label', midiToNameJa(key.midi));
+    g.setAttribute('aria-label', midiToNameEn(key.midi));
     g.style.cursor = 'pointer';
     this.keyGroups.set(key.midi, g);
 
@@ -216,7 +216,7 @@ export class Keyboard {
     label.setAttribute('fill', key.black ? 'var(--color-key-white)' : 'var(--color-key-black)');
     label.setAttribute('pointer-events', 'none');
     label.style.display = this.showNoteNames ? '' : 'none';
-    label.textContent = midiToNameJa(key.midi);
+    label.textContent = midiToNameEn(key.midi);
     g.appendChild(label);
     this.labelElements.set(key.midi, label);
 

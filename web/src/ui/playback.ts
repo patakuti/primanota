@@ -1,5 +1,5 @@
 // Full-piece MIDI playback for the revealed answer, and the 3-tier onset
-// preview (02_design.md 4.8, 3.10, 追加要求10).
+// preview (02_design.md 4.8, 3.10, requirement 10).
 //
 // This project's own additive synth (audio/synth.ts, 4.3) is a handful of
 // oscillators tuned for a keyboard tap; scheduling it note-by-note for an

@@ -52,6 +52,23 @@ python3 analyze_midi.py       # Extract the opening notes -> report.md
 python3 build_dataset.py      # Generate web/src/data/pieces.json and web/public/playback/*.mid
 ```
 
+To add or remove a single piece afterwards, use `manage_piece.py` instead of
+running the steps above by hand — it wraps them and also cleans up files that
+`build_dataset.py` alone would leave behind:
+
+```
+python3 manage_piece.py add            # interactively add one piece (downloads its
+                                        # MIDI, analyzes it, regenerates pieces.json)
+python3 manage_piece.py remove <id>    # remove one piece and its derived files
+                                        # (data/midi, data/analysis, web/public/playback)
+```
+
+`add` only accepts a `piano-midi.de` `.mid` URL, to keep the CC BY-SA licensing
+described below intact. If the analysis reports a warning (e.g. the detected
+opening note looks wrong), it prints what to add to `data/overrides.yaml` —
+this still requires a human to verify the correct notes by ear or score,
+so it is not done automatically.
+
 ### Web app (`web/`)
 
 ```

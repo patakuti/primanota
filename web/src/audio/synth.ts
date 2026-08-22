@@ -1,8 +1,8 @@
 // Simple additive-synthesis piano-ish voice (02_design.md 4.3).
 // No sample assets: 4 oscillators per note (fundamental + 3 harmonics),
 // a pitch-dependent decay envelope and lowpass filter.
-
-import type { OnsetNote } from '../types.ts';
+// Keyboard-tap input only -- onset preview playback moved to ui/playback.ts's
+// SoundFont synth (02_design.md 4.8, 追加要求10).
 
 interface Voice {
   oscillators: OscillatorNode[];
@@ -242,13 +242,4 @@ export function stopAll(): void {
     activeVoices.delete(midi);
   }
   sustainedMidis.clear();
-}
-
-/** Play a quiz piece's opening onset: a single note or a (possibly arpeggiated) chord. */
-export function playOnset(notes: OnsetNote[]): void {
-  const ctx = getContext();
-  const now = ctx.currentTime;
-  for (const note of notes) {
-    noteOn(note.midi, note.velocity, now + note.offsetMs / 1000);
-  }
 }

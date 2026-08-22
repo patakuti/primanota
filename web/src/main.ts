@@ -4,6 +4,7 @@ import piecesData from './data/pieces.json';
 import { noteOff, noteOn, playOnset, resume } from './audio/synth.ts';
 import { Keyboard } from './ui/keyboard.ts';
 import { QuizController } from './ui/quiz.ts';
+import * as answer from './ui/answer.ts';
 
 const KEYBOARD_CLICK_VELOCITY = 90;
 
@@ -21,9 +22,11 @@ function bootstrap(): void {
 
   const progressEl = document.getElementById('quiz-progress');
   const answerPanel = document.getElementById('answer-panel');
-  // Temporary M6 stand-in for M7's real ui/answer.ts (composer/title/score
-  // display + note-name label rendering). Kept minimal on purpose.
   const answerDetails = document.getElementById('answer-details');
+  const scoreDisplay = document.getElementById('score-display');
+  if (answerDetails && scoreDisplay) {
+    answer.init(answerDetails, scoreDisplay);
+  }
 
   const keyboardContainer = document.getElementById('keyboard');
   const keyboard = keyboardContainer ? new Keyboard(keyboardContainer) : null;
@@ -37,17 +40,12 @@ function bootstrap(): void {
     if (answerPanel) {
       answerPanel.hidden = !revealed;
     }
+    const piece = quiz.getCurrentPiece();
     if (revealed) {
-      const piece = quiz.getCurrentPiece();
-      if (answerDetails) {
-        answerDetails.innerHTML = `
-          <dt>冒頭の音</dt><dd>${piece.onset.label.ja}（${piece.onset.label.en}）</dd>
-          <dt>作曲家</dt><dd>${piece.composer.ja}</dd>
-          <dt>曲名</dt><dd>${piece.title.ja}<br>${piece.title.en}</dd>
-        `;
-      }
+      answer.show(piece);
       keyboard?.highlight(piece.onset.notes.map((n) => n.midi));
     } else {
+      answer.hide();
       keyboard?.highlight([]);
     }
   }

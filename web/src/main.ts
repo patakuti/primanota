@@ -24,8 +24,17 @@ function bootstrap(): void {
   const answerPanel = document.getElementById('answer-panel');
   const answerDetails = document.getElementById('answer-details');
   const scoreDisplay = document.getElementById('score-display');
-  if (answerDetails && scoreDisplay) {
-    answer.init(answerDetails, scoreDisplay);
+  const playbackPlayBtn = document.getElementById('playback-play-btn') as HTMLButtonElement | null;
+  const playbackStopBtn = document.getElementById('playback-stop-btn') as HTMLButtonElement | null;
+  const playbackSeek = document.getElementById('playback-seek') as HTMLInputElement | null;
+  const playbackTime = document.getElementById('playback-time');
+  if (answerDetails && scoreDisplay && playbackPlayBtn && playbackStopBtn && playbackSeek && playbackTime) {
+    answer.init(answerDetails, scoreDisplay, {
+      playBtn: playbackPlayBtn,
+      stopBtn: playbackStopBtn,
+      seek: playbackSeek,
+      time: playbackTime,
+    });
   }
 
   const keyboardContainer = document.getElementById('keyboard');

@@ -37,7 +37,7 @@ MIDIのダウンロードからデータセット生成までは以下の順で�
 python3 fetch_catalog.py      # piano-midi.de から曲目一覧を取得 -> catalog_raw.yaml
 python3 download_midi.py      # catalog.yaml に載っている28曲をダウンロード
 python3 analyze_midi.py       # 冒頭音を抽出 -> report.md
-python3 build_dataset.py      # web/src/data/pieces.json を生成
+python3 build_dataset.py      # web/src/data/pieces.json と web/public/playback/*.mid を生成
 ```
 
 ### Webアプリ（web/）
@@ -55,9 +55,21 @@ MIDIデータは [piano-midi.de](http://piano-midi.de/)（Bernd Krueger氏）よ
 [CC BY-SA 3.0 Germany](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en)
 ライセンスのもと使用しています（[copy.htm](http://piano-midi.de/copy.htm) の記載を確認し、
 求められている表記要件（著作権者名・出典元へのリンク）を満たす形でフッタに掲載しています）。
+回答パネルの音源プレイバックは、元のMIDIファイルではなく、音符・ペダル情報から
+自前で再生成した派生MIDIファイル（`web/public/playback/`）を使用しています。
+
+回答パネルの音源プレイバックには、以下のサードパーティ製ソフトウェアを使用しています。
+
+- [spessasynth_lib](https://github.com/spessasus/spessasynth_lib)（Apache License 2.0） —
+  SoundFontベースのMIDI再生ライブラリ
+- [GeneralUser GS](https://github.com/mrbumpy409/GeneralUser-GS)（S. Christian Collins氏、
+  GeneralUser GS License v2.0） — ピアノ音色を含むSoundFont。
+  ライセンス全文は `web/public/soundfonts/GeneralUser-GS-LICENSE.txt` に同梱しています
 
 ## ライセンス
 
 本リポジトリのソースコード（`tools/`, `web/`）は MIT License のもとで公開しています。
-MIDIデータ由来の派生データ（`web/src/data/pieces.json` 内の音高・音価・楽譜情報）は、
-元データのライセンス（上記 CC BY-SA 3.0 Germany）を継承します。
+MIDIデータ由来の派生データ（`web/src/data/pieces.json` 内の音高・音価・楽譜情報、
+および `web/public/playback/` の派生MIDIファイル）は、元データのライセンス
+（上記 CC BY-SA 3.0 Germany）を継承します。同梱のSoundFont（`web/public/soundfonts/`）は
+上記の通り別ライセンスです。

@@ -118,3 +118,25 @@ def extract_time_signature(mid: mido.MidiFile) -> tuple[int, int]:
 def extract_track_names(mid: mido.MidiFile) -> list[str | None]:
     """Each track's `track_name` meta event text (None if a track has none)."""
     return [track.name if track.name else None for track in mid.tracks]
+
+
+def extract_channel_messages(mid: mido.MidiFile) -> list[tuple[float, mido.Message]]:
+    """All note_on/note_off/control_change/program_change messages across all
+    tracks, tagged with absolute time in seconds and merge-sorted.
+
+    Unlike extract_notes(), this keeps every raw message (including sustain
+    pedal CC64) rather than pairing note-on/off into discrete Note objects --
+    used by playback_extract.py to re-encode a full performance, pedal
+    included, rather than just a list of (pitch, start, duration) notes.
+    """
+    tempo_map = _build_tempo_map(mid)
+    events: list[tuple[float, mido.Message]] = []
+    for track in mid.tracks:
+        abs_tick = 0
+        for msg in track:
+            abs_tick += msg.time
+            if msg.type in ("note_on", "note_off", "control_change", "program_change"):
+                sec = _ticks_to_seconds(abs_tick, tempo_map, mid.ticks_per_beat)
+                events.append((sec, msg))
+    events.sort(key=lambda e: e[0])
+    return events

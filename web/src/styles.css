@@ -100,6 +100,32 @@ button {
   cursor: pointer;
 }
 
+button kbd {
+  font-family: inherit;
+  font-size: 0.75em;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 0 5px;
+  margin-left: 2px;
+  color: var(--color-fg-muted);
+  background: var(--color-panel-bg);
+}
+
+.shortcut-hint {
+  font-size: 0.85rem;
+  color: var(--color-fg-muted);
+  white-space: nowrap;
+}
+
+.shortcut-hint kbd {
+  font-family: inherit;
+  font-size: 0.9em;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 1px 5px;
+  background: var(--color-panel-bg);
+}
+
 button:hover {
   border-color: var(--color-accent);
 }
@@ -116,6 +142,12 @@ button:focus-visible,
 
 #keyboard {
   min-height: 160px;
+}
+
+.octave-indicator {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: var(--color-fg-muted);
 }
 
 .sustain-indicator {
@@ -205,6 +237,32 @@ button:focus-visible,
   text-align: center;
   font-size: 0.8rem;
   color: var(--color-fg-muted);
+}
+
+.shortcuts-help {
+  margin: 0 0 12px;
+  text-align: left;
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+.shortcuts-help summary {
+  cursor: pointer;
+  text-align: center;
+}
+
+.shortcuts-help ul {
+  margin: 8px 0 0;
+  padding-left: 1.2em;
+}
+
+.shortcuts-help kbd {
+  font-family: inherit;
+  font-size: 0.85em;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 1px 5px;
+  background: var(--color-panel-bg);
 }
 
 @media (max-width: 480px) {

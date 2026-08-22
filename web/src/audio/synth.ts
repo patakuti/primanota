@@ -1,5 +1,5 @@
 // Simple additive-synthesis piano-ish voice (02_design.md 4.3).
-// No sample assets: 3 oscillators per note (fundamental + 2 harmonics),
+// No sample assets: 4 oscillators per note (fundamental + 3 harmonics),
 // a pitch-dependent decay envelope and lowpass filter.
 
 import type { OnsetNote } from '../types.ts';
@@ -19,8 +19,15 @@ const DECAY_LOW_SEC = 6.0; // decay time constant at the low end of the keyboard
 const DECAY_HIGH_SEC = 1.2; // decay time constant at the high end of the keyboard
 const DECAY_MIDI_LOW = 21; // A0
 const DECAY_MIDI_HIGH = 108; // C8
-const HARMONIC_GAINS = [1, 0.35, 0.12]; // fundamental, 2nd, 3rd harmonic
-const HARMONIC_WAVEFORMS: OscillatorType[] = ['triangle', 'sine', 'sine'];
+const HARMONIC_GAINS = [1, 0.5, 0.28, 0.15]; // fundamental, 2nd, 3rd, 4th harmonic
+const HARMONIC_WAVEFORMS: OscillatorType[] = ['triangle', 'sine', 'sine', 'sine'];
+// Very low fundamentals (e.g. F1, ~44Hz) reproduce poorly on small speakers;
+// boosting the harmonics further for the lowest notes lets the ear infer
+// the pitch from the overtone series even when the fundamental itself is
+// weak (the "missing fundamental" effect), rather than relying on the
+// fundamental to carry the pitch on its own.
+const LOW_NOTE_HARMONIC_BOOST_MIDI = 40; // roughly E2
+const LOW_NOTE_HARMONIC_BOOST_MAX = 1.6;
 
 // Rough equal-loudness compensation: low frequencies sound much quieter than
 // midrange ones at the same linear amplitude, so boost bass notes (relative
@@ -75,7 +82,10 @@ function decayTimeForMidi(midi: number): number {
 function harmonicScaleForMidi(midi: number): number {
   // Higher notes get weaker harmonics (thinner, less buzzy at the top).
   const t = (midi - DECAY_MIDI_LOW) / (DECAY_MIDI_HIGH - DECAY_MIDI_LOW);
-  return lerp(1, 0.3, t);
+  const base = lerp(1, 0.3, t);
+  if (midi >= LOW_NOTE_HARMONIC_BOOST_MIDI) return base;
+  const lowT = (LOW_NOTE_HARMONIC_BOOST_MIDI - midi) / (LOW_NOTE_HARMONIC_BOOST_MIDI - DECAY_MIDI_LOW);
+  return lerp(base, LOW_NOTE_HARMONIC_BOOST_MAX, lowT);
 }
 
 function filterCutoffForFrequency(freq: number): number {

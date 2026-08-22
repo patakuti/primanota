@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -10,16 +10,16 @@
     <div id="app">
       <header class="app-header">
         <h1>PrimaNota</h1>
-        <p class="tagline">冒頭の一音から、名曲を当てる。</p>
+        <p class="tagline">Guess the piece from its opening note.</p>
       </header>
 
       <main>
         <section id="quiz-area" class="panel">
           <p id="quiz-progress"></p>
           <div class="quiz-controls">
-            <button id="play-onset-chord-btn" type="button">冒頭の音を聴く <kbd>1</kbd></button>
-            <button id="play-onset-0500-btn" type="button">0.5秒再生 <kbd>2</kbd></button>
-            <button id="play-onset-1000-btn" type="button">1秒再生 <kbd>3</kbd></button>
+            <button id="play-onset-chord-btn" type="button">Play opening note <kbd>1</kbd></button>
+            <button id="play-onset-0500-btn" type="button">Play 0.5s <kbd>2</kbd></button>
+            <button id="play-onset-1000-btn" type="button">Play 1s <kbd>3</kbd></button>
           </div>
         </section>
 
@@ -27,41 +27,41 @@
           <div id="keyboard"></div>
           <label class="keyboard-option">
             <input id="show-note-names" type="checkbox" />
-            音名を表示
+            Show note names
           </label>
         </section>
 
         <section id="controls-area" class="panel">
-          <button id="reveal-answer-btn" type="button">回答を見る <kbd>4</kbd></button>
-          <button id="next-piece-btn" type="button">次の問題 → <kbd>9</kbd></button>
+          <button id="reveal-answer-btn" type="button">Reveal answer <kbd>4</kbd></button>
+          <button id="next-piece-btn" type="button">Next piece → <kbd>9</kbd></button>
         </section>
 
         <section id="answer-panel" class="panel" hidden>
           <dl id="answer-details"></dl>
           <div id="score-display"></div>
           <div id="playback-controls" class="playback-controls">
-            <button id="playback-play-btn" type="button">▶ 再生 <kbd>5</kbd></button>
-            <button id="playback-stop-btn" type="button" disabled>■ 停止 <kbd>5</kbd></button>
-            <input id="playback-seek" type="range" min="0" max="0" value="0" step="100" aria-label="再生位置" />
+            <button id="playback-play-btn" type="button">▶ Play <kbd>5</kbd></button>
+            <button id="playback-stop-btn" type="button" disabled>■ Stop <kbd>5</kbd></button>
+            <input id="playback-seek" type="range" min="0" max="0" value="0" step="100" aria-label="Playback position" />
             <span id="playback-time">0:00 / 0:00</span>
-            <span class="shortcut-hint"><kbd>,</kbd> / <kbd>.</kbd> で5秒シーク</span>
+            <span class="shortcut-hint"><kbd>,</kbd> / <kbd>.</kbd> seek 5s</span>
           </div>
         </section>
       </main>
 
       <footer class="app-footer">
         <details class="shortcuts-help">
-          <summary>キーボードショートカット</summary>
+          <summary>Keyboard shortcuts</summary>
           <ul>
-            <li><kbd>1</kbd> 冒頭の音（和音）を聴く</li>
-            <li><kbd>2</kbd> 冒頭0.5秒を聴く</li>
-            <li><kbd>3</kbd> 冒頭1秒を聴く</li>
-            <li><kbd>4</kbd> 回答を見る</li>
-            <li><kbd>5</kbd> プレイバック再生/停止</li>
-            <li><kbd>9</kbd> 次の問題</li>
-            <li><kbd>,</kbd> / <kbd>.</kbd> プレイバックを5秒戻す/進める</li>
-            <li>鍵盤: <kbd>A S D F G H J K L</kbd>(白鍵) <kbd>W E T Y U O P</kbd>(黒鍵)、
-              <kbd>Z</kbd> / <kbd>X</kbd> でオクターブ変更、<kbd>Ctrl</kbd> 押下中はサスティン</li>
+            <li><kbd>1</kbd> Play opening note (chord)</li>
+            <li><kbd>2</kbd> Play opening 0.5s</li>
+            <li><kbd>3</kbd> Play opening 1s</li>
+            <li><kbd>4</kbd> Reveal answer</li>
+            <li><kbd>5</kbd> Toggle playback play/stop</li>
+            <li><kbd>9</kbd> Next piece</li>
+            <li><kbd>,</kbd> / <kbd>.</kbd> Seek playback back/forward 5s</li>
+            <li>Keys: <kbd>A S D F G H J K L</kbd> (white keys) <kbd>W E T Y U O P</kbd> (black keys),
+              <kbd>Z</kbd> / <kbd>X</kbd> to change octave, hold <kbd>Ctrl</kbd> for sustain</li>
           </ul>
         </details>
         <p id="credit"></p>

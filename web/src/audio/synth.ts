@@ -2,7 +2,7 @@
 // No sample assets: 4 oscillators per note (fundamental + 3 harmonics),
 // a pitch-dependent decay envelope and lowpass filter.
 // Keyboard-tap input only -- onset preview playback moved to ui/playback.ts's
-// SoundFont synth (02_design.md 4.8, 追加要求10).
+// SoundFont synth (02_design.md 4.8, requirement 10).
 
 interface Voice {
   oscillators: OscillatorNode[];

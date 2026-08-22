@@ -10,12 +10,12 @@ import { playOnsetPreview, stopSharedPlayback, type OnsetPreviewVariant } from '
 const KEYBOARD_CLICK_VELOCITY = 90;
 const SEEK_STEP_MS = 5000;
 
-// Global one-key shortcuts (追加要求9フォローアップ: roving tabindexにしても
-// Tabで各操作に辿り着く必要があること自体が不便という指摘を受けて追加)。
-// QWERTY演奏（a/w/s/...）・オクターブシフト（z/x）・サスティン（Ctrl）と
-// キーが重複しないよう、数字と `,`/`.` だけを使う。
-// 追加要求10で冒頭試聴が3段階（1/2/3）になったのに伴い、回答を見る/プレイバックを
-// 4/5へ繰り下げた。
+// Global one-key shortcuts (follow-up to requirement 9: even with roving
+// tabindex, having to Tab to each control at all was flagged as inconvenient,
+// so these were added). Only digits and `,`/`.` are used so they don't
+// collide with QWERTY note input (a/w/s/...), the octave shift (z/x), or
+// sustain (Ctrl). Requirement 10 split the onset preview into 3 tiers
+// (1/2/3), which pushed reveal/playback down to 4/5.
 const SHORTCUT_KEYS = {
   onsetChord: '1',
   onset0500: '2',
@@ -63,7 +63,7 @@ function bootstrap(): void {
 
   function renderQuizState(): void {
     if (progressEl) {
-      progressEl.textContent = `第${quiz.getQuestionNumber()}問（全${dataset.pieces.length}曲）`;
+      progressEl.textContent = `Question ${quiz.getQuestionNumber()} of ${dataset.pieces.length}`;
     }
     const revealed = quiz.getState() === 'revealed';
     if (answerPanel) {

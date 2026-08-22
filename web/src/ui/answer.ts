@@ -80,12 +80,12 @@ export function show(piece: Piece): void {
   currentPiece = piece;
   if (detailsEl) {
     detailsEl.innerHTML = `
-      <dt>冒頭の音</dt>
-      <dd>${piece.onset.label.ja}（${piece.onset.label.en}） / ${piece.onset.label.solfege}</dd>
-      <dt>作曲家</dt>
-      <dd>${piece.composer.ja}<br>${piece.composer.en}</dd>
-      <dt>曲名</dt>
-      <dd>${piece.title.ja}<br>${piece.title.en}</dd>
+      <dt>Opening note</dt>
+      <dd>${piece.onset.label.en}</dd>
+      <dt>Composer</dt>
+      <dd>${piece.composer.en}</dd>
+      <dt>Title</dt>
+      <dd>${piece.title.en}</dd>
     `;
   }
   rerenderScore();

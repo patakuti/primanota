@@ -104,3 +104,19 @@ export function hide(): void {
     scoreEl.replaceChildren();
   }
 }
+
+/** For the global playback keyboard shortcuts (main.ts) -- no-op if nothing is revealed yet. */
+export function togglePlayback(): void {
+  if (!controller || !playbackEls) return;
+  if (playbackEls.playBtn.disabled) {
+    controller.stop();
+  } else {
+    void controller.play();
+  }
+}
+
+/** For the global seek keyboard shortcuts (main.ts) -- no-op if nothing is revealed yet. */
+export function seekPlaybackBy(deltaMs: number): void {
+  if (!controller || !playbackEls) return;
+  controller.seek(Number(playbackEls.seek.value) + deltaMs);
+}

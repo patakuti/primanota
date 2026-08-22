@@ -17,7 +17,7 @@
         <section id="quiz-area" class="panel">
           <p id="quiz-progress"></p>
           <div class="quiz-controls">
-            <button id="play-onset-btn" type="button">冒頭の音を聴く</button>
+            <button id="play-onset-btn" type="button">冒頭の音を聴く <kbd>1</kbd></button>
           </div>
         </section>
 
@@ -30,23 +30,36 @@
         </section>
 
         <section id="controls-area" class="panel">
-          <button id="reveal-answer-btn" type="button">回答を見る</button>
-          <button id="next-piece-btn" type="button">次の問題 →</button>
+          <button id="reveal-answer-btn" type="button">回答を見る <kbd>2</kbd></button>
+          <button id="next-piece-btn" type="button">次の問題 → <kbd>9</kbd></button>
         </section>
 
         <section id="answer-panel" class="panel" hidden>
           <dl id="answer-details"></dl>
           <div id="score-display"></div>
           <div id="playback-controls" class="playback-controls">
-            <button id="playback-play-btn" type="button">▶ 再生</button>
-            <button id="playback-stop-btn" type="button" disabled>■ 停止</button>
+            <button id="playback-play-btn" type="button">▶ 再生 <kbd>4</kbd></button>
+            <button id="playback-stop-btn" type="button" disabled>■ 停止 <kbd>4</kbd></button>
             <input id="playback-seek" type="range" min="0" max="0" value="0" step="100" aria-label="再生位置" />
             <span id="playback-time">0:00 / 0:00</span>
+            <span class="shortcut-hint"><kbd>,</kbd> / <kbd>.</kbd> で5秒シーク</span>
           </div>
         </section>
       </main>
 
       <footer class="app-footer">
+        <details class="shortcuts-help">
+          <summary>キーボードショートカット</summary>
+          <ul>
+            <li><kbd>1</kbd> 冒頭の音を聴く</li>
+            <li><kbd>2</kbd> 回答を見る</li>
+            <li><kbd>9</kbd> 次の問題</li>
+            <li><kbd>4</kbd> プレイバック再生/停止</li>
+            <li><kbd>,</kbd> / <kbd>.</kbd> プレイバックを5秒戻す/進める</li>
+            <li>鍵盤: <kbd>A S D F G H J K L</kbd>(白鍵) <kbd>W E T Y U O P</kbd>(黒鍵)、
+              <kbd>Z</kbd> / <kbd>X</kbd> でオクターブ変更、<kbd>Ctrl</kbd> 押下中はサスティン</li>
+          </ul>
+        </details>
         <p id="credit"></p>
       </footer>
     </div>

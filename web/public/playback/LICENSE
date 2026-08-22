@@ -1,0 +1,26 @@
+This applies to the *.mid files in this directory only.
+The rest of this repository (source code) is MIT-licensed; see the LICENSE
+file at the repository root.
+
+--------------------------------------------------------------------------
+
+These MIDI files (<id>.mid, <id>_chord.mid, <id>_0500.mid, <id>_1000.mid) are
+not the original files from piano-midi.de. They are derivative MIDI files
+regenerated from note pitch/duration and pedal data extracted from MIDI files
+by Bernd Krueger, published at http://www.piano-midi.de.
+
+Per http://piano-midi.de/copy.htm, the original MIDI files are licensed under
+the Creative Commons Attribution-ShareAlike 3.0 Germany License (CC BY-SA 3.0
+DE), and adaptations (such as these regenerated files) inherit the same
+license:
+
+    http://creativecommons.org/licenses/by-sa/3.0/de/deed.en
+
+You may use and adapt these files as long as you:
+
+  - attribute the copyright holder of the original MIDI files
+      Name:   Bernd Krueger
+      Source: http://www.piano-midi.de
+
+  - distribute or publicly perform it (or any adaptation) only under the
+    same (CC BY-SA 3.0 DE) license.

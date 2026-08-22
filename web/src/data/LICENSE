@@ -1,0 +1,24 @@
+This applies to pieces.json in this directory only.
+The rest of this repository (source code) is MIT-licensed; see the LICENSE
+file at the repository root.
+
+--------------------------------------------------------------------------
+
+pieces.json contains musical data (pitches, note durations, and score
+excerpts) derived from MIDI files by Bernd Krueger, published at
+http://www.piano-midi.de.
+
+Per http://piano-midi.de/copy.htm, those MIDI files are licensed under the
+Creative Commons Attribution-ShareAlike 3.0 Germany License (CC BY-SA 3.0
+DE):
+
+    http://creativecommons.org/licenses/by-sa/3.0/de/deed.en
+
+You may use and adapt this data as long as you:
+
+  - attribute the copyright holder
+      Name:   Bernd Krueger
+      Source: http://www.piano-midi.de
+
+  - distribute or publicly perform it (or any adaptation, including this
+    file) only under the same (CC BY-SA 3.0 DE) license.

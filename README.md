@@ -56,10 +56,18 @@ npm run build    # 本番ビルド (dist/)
 
 ## データソースとライセンス
 
+出題対象の楽曲そのもの（バッハ、ショパンなど）はいずれも各国の著作権保護期間が
+終了したパブリックドメインの作品です。以下のライセンス表記は、その演奏を収録した
+**MIDIデータ**（演奏情報）の著作権に関するものであり、楽曲自体に著作権が存在するわけ
+ではありません。
+
 MIDIデータは [piano-midi.de](http://piano-midi.de/)（Bernd Krueger氏）より、
 [CC BY-SA 3.0 Germany](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en)
-ライセンスのもと使用しています（[copy.htm](http://piano-midi.de/copy.htm) の記載を確認し、
-求められている表記要件（著作権者名・出典元へのリンク）を満たす形でフッタに掲載しています）。
+ライセンスのもと使用しています。[copy.htm](http://piano-midi.de/copy.htm) には
+「著作権者名（Bernd Krueger）と出典（http://www.piano-midi.de）を表示すること」
+「（改変物を含め）再配布・公開再生は同一ライセンス条件でのみ許可する」の2点が
+明記されており、前者はフッタに、後者は本セクション・`web/src/data/LICENSE`・
+`web/public/playback/LICENSE`（後述）で満たしています。
 冒頭音の試聴（3段階）・回答パネルでの曲全体プレイバックはいずれも、元のMIDIファイルではなく、
 音符・ペダル情報から自前で再生成した派生MIDIファイル（`web/public/playback/`、曲ごとに
 `<id>.mid`（曲全体）/ `<id>_chord.mid`（和音のみ）/ `<id>_0500.mid`（0.5秒）/
@@ -71,13 +79,19 @@ MIDIデータは [piano-midi.de](http://piano-midi.de/)（Bernd Krueger氏）よ
 - [spessasynth_lib](https://github.com/spessasus/spessasynth_lib)（Apache License 2.0） —
   SoundFontベースのMIDI再生ライブラリ
 - [GeneralUser GS](https://github.com/mrbumpy409/GeneralUser-GS)（S. Christian Collins氏、
-  GeneralUser GS License v2.0） — ピアノ音色を含むSoundFont。
-  ライセンス全文は `web/public/soundfonts/GeneralUser-GS-LICENSE.txt` に同梱しています
+  GeneralUser GS License v2.0） — ピアノ音色を含むSoundFont。私的利用・商用利用ともに
+  改変・再配布が無償で許可されており、帰属表示の義務もありません（同梱ファイルへの
+  直接リンクは避けてほしいとのみ要望されているため、本リポジトリでは実体をローカルに
+  同梱しています）。ライセンス全文は `web/public/soundfonts/GeneralUser-GS-LICENSE.txt`
+  に同梱しています
 
 ## ライセンス
 
-本リポジトリのソースコード（`tools/`, `web/`）は MIT License のもとで公開しています。
+本リポジトリのソースコード（`tools/`, `web/`。ただし下記を除く）は MIT License の
+もとで公開しています。
 MIDIデータ由来の派生データ（`web/src/data/pieces.json` 内の音高・音価・楽譜情報、
 および `web/public/playback/` の派生MIDIファイル）は、元データのライセンス
-（上記 CC BY-SA 3.0 Germany）を継承します。同梱のSoundFont（`web/public/soundfonts/`）は
-上記の通り別ライセンスです。
+（上記 CC BY-SA 3.0 Germany）を継承し、MITではありません。誤って混同されないよう、
+`web/src/data/LICENSE` と `web/public/playback/LICENSE` にそれぞれの適用範囲・
+ライセンス条件を明記しています。同梱のSoundFont（`web/public/soundfonts/`）は
+上記の通りさらに別ライセンス（GeneralUser GS License v2.0）です。

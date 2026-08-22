@@ -1,10 +1,11 @@
 import './styles.css';
 import type { PiecesDataset } from './types.ts';
 import piecesData from './data/pieces.json';
-import { noteOff, noteOn, playOnset, resume, setSustain, stopAll } from './audio/synth.ts';
+import { noteOff, noteOn, resume, setSustain, stopAll } from './audio/synth.ts';
 import { Keyboard } from './ui/keyboard.ts';
 import { QuizController } from './ui/quiz.ts';
 import * as answer from './ui/answer.ts';
+import { playOnsetPreview, stopSharedPlayback, type OnsetPreviewVariant } from './ui/playback.ts';
 
 const KEYBOARD_CLICK_VELOCITY = 90;
 const SEEK_STEP_MS = 5000;
@@ -13,12 +14,16 @@ const SEEK_STEP_MS = 5000;
 // Tabで各操作に辿り着く必要があること自体が不便という指摘を受けて追加)。
 // QWERTY演奏（a/w/s/...）・オクターブシフト（z/x）・サスティン（Ctrl）と
 // キーが重複しないよう、数字と `,`/`.` だけを使う。
+// 追加要求10で冒頭試聴が3段階（1/2/3）になったのに伴い、回答を見る/プレイバックを
+// 4/5へ繰り下げた。
 const SHORTCUT_KEYS = {
-  playOnset: '1',
-  reveal: '2',
-  next: '9', // deliberately far from 1/2 -- "next piece" discards the current one, so a
-  // mis-hit while reaching for 1/2 shouldn't be able to trigger it
-  togglePlayback: '4',
+  onsetChord: '1',
+  onset0500: '2',
+  onset1000: '3',
+  reveal: '4',
+  togglePlayback: '5',
+  next: '9', // deliberately far from 1-5 -- "next piece" discards the current one, so a
+  // mis-hit while reaching for those keys shouldn't be able to trigger it
   seekBack: ',',
   seekForward: '.',
 } as const;
@@ -74,21 +79,24 @@ function bootstrap(): void {
     }
   }
 
-  async function playCurrentOnset(): Promise<void> {
-    await resume();
-    playOnset(quiz.getCurrentPiece().onset.notes);
+  async function playCurrentOnsetPreview(variant: OnsetPreviewVariant): Promise<void> {
+    await playOnsetPreview(quiz.getCurrentPiece().id, variant);
   }
 
   function revealAnswer(): void {
+    stopSharedPlayback();
     quiz.reveal();
   }
 
   function goToNextPiece(): void {
     stopAll();
+    stopSharedPlayback();
     quiz.next();
   }
 
-  document.getElementById('play-onset-btn')?.addEventListener('click', playCurrentOnset);
+  document.getElementById('play-onset-chord-btn')?.addEventListener('click', () => void playCurrentOnsetPreview('chord'));
+  document.getElementById('play-onset-0500-btn')?.addEventListener('click', () => void playCurrentOnsetPreview('0500'));
+  document.getElementById('play-onset-1000-btn')?.addEventListener('click', () => void playCurrentOnsetPreview('1000'));
   document.getElementById('reveal-answer-btn')?.addEventListener('click', revealAnswer);
   document.getElementById('next-piece-btn')?.addEventListener('click', goToNextPiece);
 
@@ -98,8 +106,14 @@ function bootstrap(): void {
   document.addEventListener('keydown', (ev) => {
     if (ev.repeat) return;
     switch (ev.key) {
-      case SHORTCUT_KEYS.playOnset:
-        void playCurrentOnset();
+      case SHORTCUT_KEYS.onsetChord:
+        void playCurrentOnsetPreview('chord');
+        break;
+      case SHORTCUT_KEYS.onset0500:
+        void playCurrentOnsetPreview('0500');
+        break;
+      case SHORTCUT_KEYS.onset1000:
+        void playCurrentOnsetPreview('1000');
         break;
       case SHORTCUT_KEYS.reveal:
         revealAnswer();

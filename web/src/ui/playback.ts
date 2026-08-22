@@ -1,18 +1,21 @@
-// Full-piece MIDI playback for the revealed answer (02_design.md 4.8).
+// Full-piece MIDI playback for the revealed answer, and the 3-tier onset
+// preview (02_design.md 4.8, 3.10, 追加要求10).
 //
 // This project's own additive synth (audio/synth.ts, 4.3) is a handful of
-// oscillators tuned for a single onset note/chord; scheduling it note-by-note
-// for an entire piece (an earlier version of this file did that) doesn't
-// reproduce dynamics or the sustain pedal well enough to sound musical. This
-// instead uses a real SoundFont-based General MIDI synth (spessasynth_lib)
-// playing a small derived MIDI file (tools/playback_extract.py, 3.9) that we
-// re-encode ourselves -- piano-midi.de's original .mid files still aren't
-// shipped, per this project's existing policy.
+// oscillators tuned for a keyboard tap; scheduling it note-by-note for an
+// entire piece (an earlier version of this file did that) doesn't reproduce
+// dynamics or the sustain pedal well enough to sound musical, and even for a
+// single onset chord it now sounds noticeably different from the full-piece
+// playback next to it. This instead uses a real SoundFont-based General MIDI
+// synth (spessasynth_lib) for everything except keyboard taps, playing small
+// derived MIDI files (tools/playback_extract.py, 3.9/3.10) that we re-encode
+// ourselves -- piano-midi.de's original .mid files still aren't shipped, per
+// this project's existing policy.
 //
 // The AudioContext/synth/SoundFont are expensive to set up (the SoundFont is
 // ~32MB) so they're created once and shared across every PlaybackController
-// instance (one gets created per revealed piece); only the currently-loaded
-// song is swapped via `loadNewSongList`.
+// instance *and* every onset preview; only the currently-loaded song is
+// swapped via `loadNewSongList`.
 
 import { Sequencer, WorkletSynthesizer } from 'spessasynth_lib';
 
@@ -32,13 +35,26 @@ export interface PlaybackTick {
   isPlaying: boolean;
 }
 
+/** 'full' = the whole revealed piece; the others are the 3-tier onset preview (3.10). */
+export type OnsetPreviewVariant = 'chord' | '0500' | '1000';
+
+const PREVIEW_FILE_SUFFIX: Record<OnsetPreviewVariant, string> = {
+  chord: 'chord',
+  '0500': '0500',
+  '1000': '1000',
+};
+
 type TickListener = (tick: PlaybackTick) => void;
 
 let sharedContext: AudioContext | null = null;
 let sharedSynth: WorkletSynthesizer | null = null;
 let sharedSequencer: Sequencer | null = null;
 let soundBankReady: Promise<void> | null = null;
-let loadedPieceId: string | null = null;
+// Key of whichever song (full piece or onset preview) is currently loaded into
+// sharedSequencer, e.g. "chopin_op10_no12#full" or "chopin_op10_no12#chord".
+// The full-piece PlaybackController and playOnsetPreview() below both compare
+// against this to detect being superseded by the other.
+let loadedSongKey: string | null = null;
 
 async function getSharedSequencer(): Promise<Sequencer> {
   sharedContext ??= new AudioContext();
@@ -74,14 +90,16 @@ async function getSharedSequencer(): Promise<Sequencer> {
 }
 
 export class PlaybackController {
-  private readonly pieceId: string;
+  private readonly songKey: string;
+  private readonly fileUrl: string;
   private isPlaying = false;
   private disposed = false;
   private rafHandle: number | null = null;
   private tickListeners: TickListener[] = [];
 
   constructor(pieceId: string) {
-    this.pieceId = pieceId;
+    this.songKey = `${pieceId}#full`;
+    this.fileUrl = `${import.meta.env.BASE_URL}playback/${pieceId}.mid`;
   }
 
   /**
@@ -92,24 +110,24 @@ export class PlaybackController {
    * instead of getting stuck at 0 (which made seeking look broken).
    */
   get durationMs(): number {
-    return loadedPieceId === this.pieceId ? (sharedSequencer?.duration ?? 0) * 1000 : 0;
+    return loadedSongKey === this.songKey ? (sharedSequencer?.duration ?? 0) * 1000 : 0;
   }
 
   /** Loads this piece into the shared sequencer if it isn't already current. */
   private async ensureLoaded(): Promise<Sequencer> {
     const sequencer = await getSharedSequencer();
-    if (loadedPieceId !== this.pieceId) {
-      const res = await fetch(`${import.meta.env.BASE_URL}playback/${this.pieceId}.mid`);
+    if (loadedSongKey !== this.songKey) {
+      const res = await fetch(this.fileUrl);
       const binary = await res.arrayBuffer();
-      sequencer.loadNewSongList([{ binary, fileName: `${this.pieceId}.mid` }]);
-      loadedPieceId = this.pieceId;
+      sequencer.loadNewSongList([{ binary, fileName: this.songKey }]);
+      loadedSongKey = this.songKey;
     }
     return sequencer;
   }
 
   async play(): Promise<void> {
     const sequencer = await this.ensureLoaded();
-    if (this.disposed || loadedPieceId !== this.pieceId) return; // superseded while awaiting
+    if (this.disposed || loadedSongKey !== this.songKey) return; // superseded while awaiting
     this.isPlaying = true;
     sequencer.play();
     this.startTicking(sequencer);
@@ -121,12 +139,12 @@ export class PlaybackController {
     if (!this.isPlaying) return;
     this.isPlaying = false;
     this.stopTicking();
-    if (loadedPieceId === this.pieceId) sharedSequencer?.pause();
+    if (loadedSongKey === this.songKey) sharedSequencer?.pause();
     this.emitTick(sharedSequencer);
   }
 
   seek(ms: number): void {
-    if (loadedPieceId !== this.pieceId || !sharedSequencer) return;
+    if (loadedSongKey !== this.songKey || !sharedSequencer) return;
     sharedSequencer.currentTime = ms / 1000;
     this.emitTick(sharedSequencer);
   }
@@ -144,7 +162,7 @@ export class PlaybackController {
 
   private startTicking(sequencer: Sequencer): void {
     const tick = (): void => {
-      if (!this.isPlaying || loadedPieceId !== this.pieceId) return;
+      if (!this.isPlaying || loadedSongKey !== this.songKey) return;
       this.emitTick(sequencer);
       if (sequencer.isFinished) {
         this.stop();
@@ -163,8 +181,33 @@ export class PlaybackController {
   }
 
   private emitTick(sequencer: Sequencer | null): void {
-    const positionMs = loadedPieceId === this.pieceId ? (sequencer?.currentTime ?? 0) * 1000 : 0;
+    const positionMs = loadedSongKey === this.songKey ? (sequencer?.currentTime ?? 0) * 1000 : 0;
     const tick: PlaybackTick = { positionMs, durationMs: this.durationMs, isPlaying: this.isPlaying };
     for (const cb of this.tickListeners) cb(tick);
   }
+}
+
+/**
+ * Play one of the 3-tier onset-preview clips (3.10) for the quiz's opening
+ * "listen" shortcuts (1/2/3). These are short, self-terminating derived MIDI
+ * files (each already ends exactly where it should -- see
+ * tools/playback_extract.py), so unlike PlaybackController there's no seek
+ * bar/duration UI to drive and no need for a client-side stop timer.
+ */
+export async function playOnsetPreview(pieceId: string, variant: OnsetPreviewVariant): Promise<void> {
+  const songKey = `${pieceId}#${variant}`;
+  const sequencer = await getSharedSequencer();
+  if (loadedSongKey !== songKey) {
+    const res = await fetch(`${import.meta.env.BASE_URL}playback/${pieceId}_${PREVIEW_FILE_SUFFIX[variant]}.mid`);
+    const binary = await res.arrayBuffer();
+    sequencer.loadNewSongList([{ binary, fileName: songKey }]);
+    loadedSongKey = songKey;
+  }
+  sequencer.currentTime = 0; // restart from the top even if this exact preview was already loaded
+  sequencer.play();
+}
+
+/** Stops whatever is currently sounding through the shared sequencer (full-piece playback or an onset preview). */
+export function stopSharedPlayback(): void {
+  sharedSequencer?.pause();
 }

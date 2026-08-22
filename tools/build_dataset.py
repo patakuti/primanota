@@ -18,7 +18,11 @@ import mido
 import yaml
 
 from analyze_midi import analyze_piece, load_overrides
-from playback_extract import extract_playback_midi
+from playback_extract import (
+    extract_onset_chord_midi,
+    extract_playback_midi,
+    extract_truncated_preview_midi,
+)
 from score_extract import extract_score
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -36,7 +40,7 @@ CREDIT = {
 }
 
 
-def build_piece(piece: dict, overrides: dict) -> tuple[dict, dict]:
+def build_piece(piece: dict, overrides: dict) -> tuple[dict, dict, dict]:
     onset_result = analyze_piece(piece, overrides)
     mid = mido.MidiFile(MIDI_DIR / f"{piece['id']}.mid")
 
@@ -69,7 +73,13 @@ def build_piece(piece: dict, overrides: dict) -> tuple[dict, dict]:
         "score": score,
     }
     playback_midi = extract_playback_midi(mid)
-    return piece_data, playback_midi
+    t0_sec = onset_result["t0Sec"]
+    preview_midis = {
+        "chord": extract_onset_chord_midi(mid, t0_sec, piece_data["onset"]["notes"]),
+        "0500": extract_truncated_preview_midi(mid, t0_sec, 0.5),
+        "1000": extract_truncated_preview_midi(mid, t0_sec, 1.0),
+    }
+    return piece_data, playback_midi, preview_midis
 
 
 def main() -> None:
@@ -78,7 +88,7 @@ def main() -> None:
     overrides = load_overrides()
 
     built = [build_piece(piece, overrides) for piece in catalog]
-    pieces = [piece_data for piece_data, _ in built]
+    pieces = [piece_data for piece_data, _, _ in built]
 
     dataset = {
         "version": 1,
@@ -92,11 +102,13 @@ def main() -> None:
         json.dump(dataset, f, ensure_ascii=False, indent=2)
 
     PLAYBACK_DIR.mkdir(parents=True, exist_ok=True)
-    for piece_data, playback_midi in built:
+    for piece_data, playback_midi, preview_midis in built:
         playback_midi.save(PLAYBACK_DIR / f"{piece_data['id']}.mid")
+        for variant, preview_midi in preview_midis.items():
+            preview_midi.save(PLAYBACK_DIR / f"{piece_data['id']}_{variant}.mid")
 
     print(f"Wrote {len(pieces)} pieces to {OUT_PATH}")
-    print(f"Wrote {len(built)} playback MIDI files to {PLAYBACK_DIR}")
+    print(f"Wrote {len(built)} playback MIDI files (+{len(built) * 3} onset previews) to {PLAYBACK_DIR}")
 
 
 if __name__ == "__main__":

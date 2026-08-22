@@ -52,11 +52,12 @@ npm run build    # 本番ビルド (dist/)
 ## データソースとライセンス
 
 MIDIデータは [piano-midi.de](http://piano-midi.de/)（Bernd Krueger氏）より、
-CC BY-SA 3.0 DE ライセンスのもと使用しています。
-
-（クレジット表記の正式な文言は、実装時に
-[copy.htm](http://piano-midi.de/copy.htm) の内容を確認のうえ確定します）
+[CC BY-SA 3.0 Germany](http://creativecommons.org/licenses/by-sa/3.0/de/deed.en)
+ライセンスのもと使用しています（[copy.htm](http://piano-midi.de/copy.htm) の記載を確認し、
+求められている表記要件（著作権者名・出典元へのリンク）を満たす形でフッタに掲載しています）。
 
 ## ライセンス
 
-（未定）
+本リポジトリのソースコード（`tools/`, `web/`）は MIT License のもとで公開しています。
+MIDIデータ由来の派生データ（`web/src/data/pieces.json` 内の音高・音価・楽譜情報）は、
+元データのライセンス（上記 CC BY-SA 3.0 Germany）を継承します。

@@ -40,6 +40,10 @@ export interface ScoreEvent {
   keys: string[];
   duration: string;
   tuplet?: TupletInfo;
+  /** True if this event is one held note split across multiple duration
+   * tokens (e.g. a 4.5-beat note as "w" + "8") and should be tied to the
+   * next event of the same keys, rather than read as a repeated attack. */
+  tiedToNext?: boolean;
 }
 
 export interface ScoreMeasure {

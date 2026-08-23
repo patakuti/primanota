@@ -218,8 +218,15 @@ def _measure_events(
         dur_ticks = min(next_onset, measure_end_tick) - onset
         keys = sorted({midi_to_vexflow_key(n.midi, key) for n in group})
         durations = _quantize_duration(dur_ticks / ticks_per_beat) or ["q"]
-        for token in durations:
-            events.append({"keys": keys, "duration": token})
+        # A duration that isn't a single standard note value (e.g. 4.5 beats)
+        # is decomposed into multiple tokens (e.g. "w" + "8"); those tokens
+        # are one held note, not a repeated attack, so tie all but the last
+        # of them together (02_design.md 3.6).
+        for idx, token in enumerate(durations):
+            event: dict = {"keys": keys, "duration": token}
+            if idx < len(durations) - 1:
+                event["tiedToNext"] = True
+            events.append(event)
         cursor = onset + dur_ticks
         i += 1
 

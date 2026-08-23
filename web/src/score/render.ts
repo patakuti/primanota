@@ -8,6 +8,7 @@ import {
   Stave,
   StaveConnector,
   StaveNote,
+  StaveTie,
   Tuplet,
   Voice,
 } from 'vexflow';
@@ -53,6 +54,17 @@ function applyTuplets(context: ReturnType<Renderer['getContext']>, notes: StaveN
     const tuplet = new Tuplet(group, { numNotes: t.numNotes, notesOccupied: t.notesOccupied });
     tuplet.setContext(context).draw();
     i = j;
+  }
+}
+
+/** Draw a tie between each event marked tiedToNext and the event right
+ * after it -- one held note that _quantize_duration (score_extract.py)
+ * split across multiple duration tokens (e.g. "w" + "8"), not a repeated
+ * attack (02_design.md 3.6). */
+function applyTies(context: ReturnType<Renderer['getContext']>, notes: StaveNote[], events: ScoreEvent[]): void {
+  for (let i = 0; i < events.length - 1; i++) {
+    if (!events[i]!.tiedToNext) continue;
+    new StaveTie({ firstNote: notes[i], lastNote: notes[i + 1] }).setContext(context).draw();
   }
 }
 
@@ -149,6 +161,8 @@ export function renderScore(container: HTMLElement, score: Score): void {
     build.bassVoice.draw(context, bass);
     applyTuplets(context, build.trebleNotes, measure.treble);
     applyTuplets(context, build.bassNotes, measure.bass);
+    applyTies(context, build.trebleNotes, measure.treble);
+    applyTies(context, build.bassNotes, measure.bass);
     for (const beam of [...build.trebleBeams, ...build.bassBeams]) {
       beam.setContext(context).draw();
     }

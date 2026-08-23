@@ -1,0 +1,67 @@
+{
+  "id": "chopin_polonaise_op53_heroic",
+  "t0Sec": 0.0,
+  "isChord": true,
+  "notes": [
+    {
+      "midi": 27,
+      "velocity": 63,
+      "offsetMs": 0.0,
+      "durationMs": 545.46,
+      "track": 2,
+      "name": {
+        "en": "Eb1",
+        "ja": "変ホ",
+        "solfege": "ミ♭"
+      }
+    },
+    {
+      "midi": 39,
+      "velocity": 75,
+      "offsetMs": 0.0,
+      "durationMs": 545.46,
+      "track": 2,
+      "name": {
+        "en": "Eb2",
+        "ja": "変ホ",
+        "solfege": "ミ♭"
+      }
+    },
+    {
+      "midi": 51,
+      "velocity": 74,
+      "offsetMs": 0.0,
+      "durationMs": 545.46,
+      "track": 1,
+      "name": {
+        "en": "Eb3",
+        "ja": "変ホ",
+        "solfege": "ミ♭"
+      }
+    },
+    {
+      "midi": 63,
+      "velocity": 88,
+      "offsetMs": 0.0,
+      "durationMs": 545.46,
+      "track": 1,
+      "name": {
+        "en": "Eb4",
+        "ja": "変ホ",
+        "solfege": "ミ♭"
+      }
+    }
+  ],
+  "label": {
+    "en": "Eb1+Eb2+Eb3+Eb4",
+    "ja": "変ホ＋変ホ＋変ホ＋変ホ",
+    "solfege": "ミ♭＋ミ♭＋ミ♭＋ミ♭"
+  },
+  "midiKeySignature": "Ab",
+  "catalogKey": "Ab",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 6051
+}

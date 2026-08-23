@@ -1,0 +1,43 @@
+{
+  "id": "chopin_scherzo_no2",
+  "t0Sec": 0.0009,
+  "isChord": true,
+  "notes": [
+    {
+      "midi": 46,
+      "velocity": 41,
+      "offsetMs": 0.0,
+      "durationMs": 449.39,
+      "track": 2,
+      "name": {
+        "en": "Bb2",
+        "ja": "変ロ",
+        "solfege": "シ♭"
+      }
+    },
+    {
+      "midi": 58,
+      "velocity": 41,
+      "offsetMs": 0.0,
+      "durationMs": 449.39,
+      "track": 1,
+      "name": {
+        "en": "Bb3",
+        "ja": "変ロ",
+        "solfege": "シ♭"
+      }
+    }
+  ],
+  "label": {
+    "en": "Bb2+Bb3",
+    "ja": "変ロ＋変ロ",
+    "solfege": "シ♭＋シ♭"
+  },
+  "midiKeySignature": "Db",
+  "catalogKey": "bb",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 5974
+}

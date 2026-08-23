@@ -50,7 +50,7 @@ it locally):
 
 ```
 python3 fetch_catalog.py      # Fetch the piece list from piano-midi.de -> catalog_raw.yaml
-python3 download_midi.py      # Download the 36 pieces listed in catalog.yaml
+python3 download_midi.py      # Download the 46 pieces listed in catalog.yaml
 python3 analyze_midi.py       # Extract the opening notes -> report.md
 python3 build_dataset.py      # Generate web/src/data/pieces.json and web/public/playback/*.mid
 ```

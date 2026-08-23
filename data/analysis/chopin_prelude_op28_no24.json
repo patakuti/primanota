@@ -1,0 +1,33 @@
+{
+  "id": "chopin_prelude_op28_no24",
+  "t0Sec": 0.0,
+  "isChord": false,
+  "notes": [
+    {
+      "midi": 38,
+      "velocity": 92,
+      "offsetMs": 0.0,
+      "durationMs": 130.31,
+      "track": 2,
+      "name": {
+        "en": "D2",
+        "ja": "ニ",
+        "solfege": "レ"
+      }
+    }
+  ],
+  "label": {
+    "en": "D2",
+    "ja": "ニ",
+    "solfege": "レ"
+  },
+  "midiKeySignature": "F",
+  "catalogKey": "d",
+  "keyMatchesMidi": true,
+  "warnings": [
+    "low_single"
+  ],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 1371
+}

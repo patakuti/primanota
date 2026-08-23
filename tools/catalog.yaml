@@ -1,4 +1,4 @@
-# Selected pieces for PrimaNota (36 pieces / 8 composers).
+# Selected pieces for PrimaNota (46 pieces / 8 composers).
 # Selected from tools/catalog_raw.yaml, favoring famous titled works
 # (01_requirements.md: "有名な標題付き曲"中心).
 #
@@ -299,3 +299,83 @@
   title_ja: "練習曲 作品25-12 ハ短調"
   key: "c"
   url: "http://piano-midi.de/midis/chopin/chpn_op25_e12.mid"
+
+- id: chopin_prelude_op28_no1
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Prelude Op.28 No.1 in C major"
+  title_ja: "前奏曲 作品28-1 ハ長調"
+  key: "C"
+  url: "http://piano-midi.de/midis/chopin/chpn-p1.mid"
+
+- id: chopin_prelude_op28_no4
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Prelude Op.28 No.4 in E minor"
+  title_ja: "前奏曲 作品28-4 ホ短調"
+  key: "e"
+  url: "http://piano-midi.de/midis/chopin/chpn-p4.mid"
+
+- id: chopin_prelude_op28_no6
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Prelude Op.28 No.6 in B minor"
+  title_ja: "前奏曲 作品28-6 ロ短調"
+  key: "b"
+  url: "http://piano-midi.de/midis/chopin/chpn-p6.mid"
+
+- id: chopin_prelude_op28_no7
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Prelude Op.28 No.7 in A major"
+  title_ja: "前奏曲 作品28-7 イ長調"
+  key: "A"
+  url: "http://piano-midi.de/midis/chopin/chpn-p7.mid"
+
+- id: chopin_prelude_op28_no16
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Prelude Op.28 No.16 in B-flat minor"
+  title_ja: "前奏曲 作品28-16 変ロ短調"
+  key: "bb"
+  url: "http://piano-midi.de/midis/chopin/chpn-p16.mid"
+
+- id: chopin_prelude_op28_no17
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Prelude Op.28 No.17 in A-flat major"
+  title_ja: "前奏曲 作品28-17 変イ長調"
+  key: "Ab"
+  url: "http://piano-midi.de/midis/chopin/chpn-p17.mid"
+
+- id: chopin_prelude_op28_no20
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Prelude Op.28 No.20 in C minor"
+  title_ja: "前奏曲 作品28-20 ハ短調"
+  key: "c"
+  url: "http://piano-midi.de/midis/chopin/chpn-p20.mid"
+
+- id: chopin_prelude_op28_no24
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Prelude Op.28 No.24 in D minor"
+  title_ja: "前奏曲 作品28-24 ニ短調"
+  key: "d"
+  url: "http://piano-midi.de/midis/chopin/chpn-p24.mid"
+
+- id: chopin_polonaise_op53_heroic
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Polonaise Op.53 in A-flat major \"Heroic\""
+  title_ja: "ポロネーズ 作品53 変イ長調「英雄」"
+  key: "Ab"
+  url: "http://piano-midi.de/midis/chopin/chpn_op53.mid"
+
+- id: chopin_scherzo_no2
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Scherzo No.2 Op.31 in B-flat minor"
+  title_ja: "スケルツォ第2番 作品31 変ロ短調"
+  key: "bb"
+  url: "http://piano-midi.de/midis/chopin/chp_op31.mid"

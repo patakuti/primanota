@@ -1,0 +1,79 @@
+{
+  "id": "chopin_prelude_op28_no16",
+  "t0Sec": 0.0015,
+  "isChord": true,
+  "notes": [
+    {
+      "midi": 29,
+      "velocity": 70,
+      "offsetMs": 179.61,
+      "durationMs": 513.45,
+      "track": 2,
+      "name": {
+        "en": "F1",
+        "ja": "ヘ",
+        "solfege": "ファ"
+      }
+    },
+    {
+      "midi": 41,
+      "velocity": 84,
+      "offsetMs": 179.61,
+      "durationMs": 513.45,
+      "track": 2,
+      "name": {
+        "en": "F2",
+        "ja": "ヘ",
+        "solfege": "ファ"
+      }
+    },
+    {
+      "midi": 63,
+      "velocity": 81,
+      "offsetMs": 0.0,
+      "durationMs": 693.06,
+      "track": 1,
+      "name": {
+        "en": "Eb4",
+        "ja": "変ホ",
+        "solfege": "ミ♭"
+      }
+    },
+    {
+      "midi": 69,
+      "velocity": 81,
+      "offsetMs": 89.05,
+      "durationMs": 604.01,
+      "track": 1,
+      "name": {
+        "en": "A4",
+        "ja": "イ",
+        "solfege": "ラ"
+      }
+    },
+    {
+      "midi": 78,
+      "velocity": 96,
+      "offsetMs": 179.61,
+      "durationMs": 539.81,
+      "track": 1,
+      "name": {
+        "en": "Gb5",
+        "ja": "変ト",
+        "solfege": "ソ♭"
+      }
+    }
+  ],
+  "label": {
+    "en": "F1+F2+Eb4+A4+Gb5",
+    "ja": "ヘ＋ヘ＋変ホ＋イ＋変ト",
+    "solfege": "ファ＋ファ＋ミ♭＋ラ＋ソ♭"
+  },
+  "midiKeySignature": "Db",
+  "catalogKey": "bb",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": true,
+  "overrideReason": "onset: auto extraction (ONSET_WINDOW=50ms) only caught the first roll note (Eb4, MIDI 63); the full opening chord -- LH F1+F2 octave, RH Eb4/A(natural)4/Gb5, MIDIs [29,41,63,69,78] -- is rolled across ~180ms in this transcription (widened via spread_sec). score: measure 1's tuplet detection failed on the same rolled chord (irregular onset gaps), so score_extract.py fell back to raw duration quantization (mixed 32nd/16th/quarter tokens) instead of recognizing the full bar as two groups of quarter-note triplets in both hands; hand-corrected using the real note-on events at ticks 0/320/640/960/1280/1600 of measure 1 (960 ticks = 2 beats / 3 = 320 ticks per triplet note). Measure 2 is left as auto-extracted (not reported as wrong). Confidence: high (onset chord and rhythm directly confirmed by the user against the printed score, 2026-08-23).",
+  "totalNotesInFile": 1199
+}

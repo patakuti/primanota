@@ -19,6 +19,21 @@
     - liszt_hungarian_rhapsody_no2
     - liszt_la_campanella
     - schumann_traumerei
+    - chopin_polonaise_op53_heroic
+    - chopin_scherzo_no2
+
+- id: chopin-preludes
+  name_en: "Chopin Préludes"
+  piece_ids:
+    - chopin_prelude_op28_no1
+    - chopin_prelude_op28_no4
+    - chopin_prelude_op28_no6
+    - chopin_prelude_op28_no7
+    - chopin_prelude_op28_no15
+    - chopin_prelude_op28_no16
+    - chopin_prelude_op28_no17
+    - chopin_prelude_op28_no20
+    - chopin_prelude_op28_no24
 
 - id: chopin-etudes
   name_en: "Chopin Études"

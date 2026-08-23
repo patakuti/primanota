@@ -1,0 +1,21 @@
+# Curated, cross-cutting quiz sets (01_requirements.md 12, 02_design.md 3.12).
+# Composer-based sets are derived automatically in tools/build_dataset.py from
+# catalog.yaml's composer_en and don't need an entry here.
+#
+# tools/build_dataset.py fails the build if a piece_ids entry below doesn't
+# exist in tools/catalog.yaml (kept in sync manually; tools/manage_piece.py
+# remove cleans up a removed piece's id from here automatically).
+
+- id: famous
+  name_en: "Most Famous"
+  piece_ids:
+    - beethoven_fur_elise
+    - beethoven_moonlight_1
+    - beethoven_pathetique_1
+    - debussy_clair_de_lune
+    - chopin_fantaisie_impromptu
+    - chopin_prelude_op28_no15
+    - mozart_rondo_alla_turca
+    - liszt_hungarian_rhapsody_no2
+    - liszt_la_campanella
+    - schumann_traumerei

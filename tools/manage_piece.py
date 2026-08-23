@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parent.parent
 TOOLS_DIR = Path(__file__).resolve().parent
 CATALOG_PATH = TOOLS_DIR / "catalog.yaml"
 OVERRIDES_PATH = ROOT / "data" / "overrides.yaml"
+PIECE_SETS_PATH = ROOT / "data" / "piece_sets.yaml"
 MIDI_DIR = ROOT / "data" / "midi"
 ANALYSIS_DIR = ROOT / "data" / "analysis"
 PLAYBACK_DIR = ROOT / "web" / "public" / "playback"
@@ -65,6 +66,27 @@ def existing_ids(blocks: list[str]) -> set[str]:
 def remove_block(blocks: list[str], piece_id: str) -> tuple[list[str], bool]:
     kept = [blocks[0]] + [b for b in blocks[1:] if block_id(b) != piece_id]
     return kept, len(kept) < len(blocks)
+
+
+def remove_piece_id_from_sets(piece_id: str) -> bool:
+    """Drop `piece_id` from every set's `piece_ids` list in
+    data/piece_sets.yaml (02_design.md 3.12), so a removed piece doesn't
+    leave a dangling reference that fails the next build_dataset.py run.
+
+    piece_ids entries are simple one-per-line YAML list items (`    - id`),
+    unlike catalog.yaml/overrides.yaml's multi-line `- id: ...` blocks, so a
+    single matching line is all that needs to change -- no block-level
+    parsing needed here.
+    """
+    if not PIECE_SETS_PATH.exists():
+        return False
+    lines = PIECE_SETS_PATH.read_text(encoding="utf-8").split("\n")
+    target = f"- {piece_id}"
+    kept_lines = [line for line in lines if line.strip() != target]
+    if len(kept_lines) == len(lines):
+        return False
+    PIECE_SETS_PATH.write_text("\n".join(kept_lines), encoding="utf-8")
+    return True
 
 
 def yaml_double_quoted(value: str) -> str:
@@ -205,6 +227,9 @@ def cmd_remove(piece_id: str) -> None:
         if removed:
             save_blocks(OVERRIDES_PATH, new_override_blocks)
             print(f"Removed '{piece_id}' from {OVERRIDES_PATH.relative_to(ROOT)}.")
+
+    if remove_piece_id_from_sets(piece_id):
+        print(f"Removed '{piece_id}' from {PIECE_SETS_PATH.relative_to(ROOT)}.")
 
     stale_files = [
         MIDI_DIR / f"{piece_id}.mid",

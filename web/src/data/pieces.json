@@ -1,12 +1,68 @@
 {
-  "version": 1,
-  "generatedAt": "2026-08-22",
+  "version": 2,
+  "generatedAt": "2026-08-23",
   "credit": {
     "source": "piano-midi.de",
     "author": "Bernd Krueger",
     "license": "CC BY-SA 3.0 DE",
     "url": "http://piano-midi.de/"
   },
+  "sets": [
+    {
+      "id": "famous",
+      "name": "Most Famous",
+      "kind": "curated",
+      "pieceCount": 10
+    },
+    {
+      "id": "frederic-chopin",
+      "name": "Frédéric Chopin",
+      "kind": "composer",
+      "pieceCount": 6
+    },
+    {
+      "id": "ludwig-van-beethoven",
+      "name": "Ludwig van Beethoven",
+      "kind": "composer",
+      "pieceCount": 5
+    },
+    {
+      "id": "franz-schubert",
+      "name": "Franz Schubert",
+      "kind": "composer",
+      "pieceCount": 4
+    },
+    {
+      "id": "franz-liszt",
+      "name": "Franz Liszt",
+      "kind": "composer",
+      "pieceCount": 3
+    },
+    {
+      "id": "robert-schumann",
+      "name": "Robert Schumann",
+      "kind": "composer",
+      "pieceCount": 3
+    },
+    {
+      "id": "johann-sebastian-bach",
+      "name": "Johann Sebastian Bach",
+      "kind": "composer",
+      "pieceCount": 3
+    },
+    {
+      "id": "claude-debussy",
+      "name": "Claude Debussy",
+      "kind": "composer",
+      "pieceCount": 2
+    },
+    {
+      "id": "wolfgang-amadeus-mozart",
+      "name": "Wolfgang Amadeus Mozart",
+      "kind": "composer",
+      "pieceCount": 2
+    }
+  ],
   "pieces": [
     {
       "id": "chopin_etude_op10_no12",
@@ -19,6 +75,9 @@
         "ja": "練習曲 作品10-12 ハ短調「革命」"
       },
       "key": "c",
+      "sets": [
+        "frederic-chopin"
+      ],
       "onset": {
         "notes": [
           {
@@ -359,6 +418,10 @@
         "ja": "前奏曲 作品28-15 変ニ長調「雨だれ」"
       },
       "key": "Db",
+      "sets": [
+        "famous",
+        "frederic-chopin"
+      ],
       "onset": {
         "notes": [
           {
@@ -555,6 +618,10 @@
         "ja": "幻想即興曲 作品66 嬰ハ短調"
       },
       "key": "c#",
+      "sets": [
+        "famous",
+        "frederic-chopin"
+      ],
       "onset": {
         "notes": [
           {
@@ -640,6 +707,9 @@
         "ja": "ピアノソナタ第2番 作品35 第3楽章「葬送行進曲」"
       },
       "key": "bb",
+      "sets": [
+        "frederic-chopin"
+      ],
       "onset": {
         "notes": [
           {
@@ -860,6 +930,9 @@
         "ja": "夜想曲 作品27-2 変ニ長調"
       },
       "key": "Db",
+      "sets": [
+        "frederic-chopin"
+      ],
       "onset": {
         "notes": [
           {
@@ -1084,6 +1157,10 @@
         "ja": "エリーゼのために イ短調"
       },
       "key": "a",
+      "sets": [
+        "famous",
+        "ludwig-van-beethoven"
+      ],
       "onset": {
         "notes": [
           {
@@ -1200,6 +1277,10 @@
         "ja": "ピアノソナタ第8番 作品13「悲愴」第1楽章"
       },
       "key": "c",
+      "sets": [
+        "famous",
+        "ludwig-van-beethoven"
+      ],
       "onset": {
         "notes": [
           {
@@ -1528,6 +1609,10 @@
         "ja": "ピアノソナタ第14番 作品27-2「月光」第1楽章"
       },
       "key": "c#",
+      "sets": [
+        "famous",
+        "ludwig-van-beethoven"
+      ],
       "onset": {
         "notes": [
           {
@@ -1852,6 +1937,9 @@
         "ja": "ピアノソナタ第21番 作品53「ワルトシュタイン」第1楽章"
       },
       "key": "C",
+      "sets": [
+        "ludwig-van-beethoven"
+      ],
       "onset": {
         "notes": [
           {
@@ -2154,6 +2242,9 @@
         "ja": "ピアノソナタ第23番 作品57「熱情」第1楽章"
       },
       "key": "f",
+      "sets": [
+        "ludwig-van-beethoven"
+      ],
       "onset": {
         "notes": [
           {
@@ -2334,6 +2425,9 @@
         "ja": "即興曲 D.899（作品90）第2番 変ホ長調"
       },
       "key": "Eb",
+      "sets": [
+        "franz-schubert"
+      ],
       "onset": {
         "notes": [
           {
@@ -2504,6 +2598,9 @@
         "ja": "即興曲 D.899（作品90）第3番 変ト長調"
       },
       "key": "Gb",
+      "sets": [
+        "franz-schubert"
+      ],
       "onset": {
         "notes": [
           {
@@ -3089,6 +3186,9 @@
         "ja": "楽興の時 D.780（作品94）第3番 ヘ短調"
       },
       "key": "f",
+      "sets": [
+        "franz-schubert"
+      ],
       "onset": {
         "notes": [
           {
@@ -3215,6 +3315,10 @@
         "ja": "月の光（ベルガマスク組曲より）"
       },
       "key": "Db",
+      "sets": [
+        "famous",
+        "claude-debussy"
+      ],
       "onset": {
         "notes": [
           {
@@ -3349,6 +3453,9 @@
         "ja": "プレリュード（ベルガマスク組曲より）"
       },
       "key": "F",
+      "sets": [
+        "claude-debussy"
+      ],
       "onset": {
         "notes": [
           {
@@ -3548,6 +3655,9 @@
         "ja": "愛の夢 第3番 変イ長調"
       },
       "key": "Ab",
+      "sets": [
+        "franz-liszt"
+      ],
       "onset": {
         "notes": [
           {
@@ -3707,6 +3817,10 @@
         "ja": "パガニーニによる大練習曲 第3番「ラ・カンパネラ」"
       },
       "key": "g#",
+      "sets": [
+        "famous",
+        "franz-liszt"
+      ],
       "onset": {
         "notes": [
           {
@@ -3862,6 +3976,10 @@
         "ja": "ハンガリー狂詩曲 第2番 嬰ハ短調"
       },
       "key": "c#",
+      "sets": [
+        "famous",
+        "franz-liszt"
+      ],
       "onset": {
         "notes": [
           {
@@ -3996,6 +4114,10 @@
         "ja": "ピアノソナタ第11番 K.331 第3楽章「トルコ行進曲」"
       },
       "key": "a",
+      "sets": [
+        "famous",
+        "wolfgang-amadeus-mozart"
+      ],
       "onset": {
         "notes": [
           {
@@ -4139,6 +4261,9 @@
         "ja": "ピアノソナタ第16番 K.545「ソナタ・ファチーレ」第1楽章"
       },
       "key": "C",
+      "sets": [
+        "wolfgang-amadeus-mozart"
+      ],
       "onset": {
         "notes": [
           {
@@ -4337,6 +4462,9 @@
         "ja": "子供の情景 作品15-1「見知らぬ国と人々について」"
       },
       "key": "G",
+      "sets": [
+        "robert-schumann"
+      ],
       "onset": {
         "notes": [
           {
@@ -4567,6 +4695,10 @@
         "ja": "子供の情景 作品15-7「トロイメライ」"
       },
       "key": "F",
+      "sets": [
+        "famous",
+        "robert-schumann"
+      ],
       "onset": {
         "notes": [
           {
@@ -4679,6 +4811,9 @@
         "ja": "バラード第1番 作品23 ト短調"
       },
       "key": "g",
+      "sets": [
+        "frederic-chopin"
+      ],
       "onset": {
         "notes": [
           {
@@ -4895,6 +5030,9 @@
         "ja": "即興曲 D.935（作品142）第3番 変ロ長調"
       },
       "key": "Bb",
+      "sets": [
+        "franz-schubert"
+      ],
       "onset": {
         "notes": [
           {
@@ -5115,6 +5253,9 @@
         "ja": "『アベック』の名による変奏曲 作品1"
       },
       "key": "F",
+      "sets": [
+        "robert-schumann"
+      ],
       "onset": {
         "notes": [
           {
@@ -5261,6 +5402,9 @@
         "ja": "平均律クラヴィーア曲集 第1巻 前奏曲とフーガ ハ長調 BWV 846"
       },
       "key": "C",
+      "sets": [
+        "johann-sebastian-bach"
+      ],
       "onset": {
         "notes": [
           {
@@ -5539,6 +5683,9 @@
         "ja": "平均律クラヴィーア曲集 第1巻 前奏曲とフーガ ハ短調 BWV 847"
       },
       "key": "c",
+      "sets": [
+        "johann-sebastian-bach"
+      ],
       "onset": {
         "notes": [
           {
@@ -5989,6 +6136,9 @@
         "ja": "平均律クラヴィーア曲集 第1巻 前奏曲とフーガ ニ長調 BWV 850"
       },
       "key": "D",
+      "sets": [
+        "johann-sebastian-bach"
+      ],
       "onset": {
         "notes": [
           {

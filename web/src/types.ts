@@ -72,6 +72,7 @@ export interface Credit {
   author: string;
   license: string;
   url: string;
+  licenseUrl: string;
 }
 
 export interface SetDefinition {

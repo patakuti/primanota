@@ -13,7 +13,8 @@ name, composer, and title.
   reproduces the actual performance
 - Lets you play freely on the on-screen piano keyboard, by click or with a
   PC keyboard (QWERTY layout); there's no correctness check on this. Holding
-  Ctrl lets notes ring like a sustain pedal
+  Ctrl lets notes ring like a sustain pedal (PC keyboard only — there is no
+  touch/mobile equivalent yet)
 - "Reveal answer" shows the note name, composer, title, and a short score
   excerpt, and highlights the matching key(s)
 - Once revealed, the whole piece can be played back, stopped, and seeked
@@ -103,8 +104,11 @@ Krueger), under the
 license. [copy.htm](http://piano-midi.de/copy.htm) spells out two
 requirements: "attribute the copyright holder (Bernd Krueger) and the
 source (http://www.piano-midi.de)" and "redistribute or publicly perform it
-— including adaptations — only under the same license." The former is
-satisfied in the app footer; the latter is satisfied by this section and by
+— including adaptations — only under the same license." The former,
+plus a link to the license text itself, is satisfied in the app footer
+(author name, a link to piano-midi.de, and a link to the CC BY-SA 3.0
+Germany deed — all three on their own, without needing this README); the
+latter (ShareAlike) is satisfied by this section and by
 `web/src/data/LICENSE` / `web/public/playback/LICENSE` (below).
 Both the 3-tier opening-note preview and the full-piece playback in the
 answer panel use derivative MIDI files that we regenerate ourselves from

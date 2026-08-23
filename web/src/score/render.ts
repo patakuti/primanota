@@ -91,8 +91,14 @@ export function renderScore(container: HTMLElement, score: Score): void {
     Accidental.applyAccidentals([trebleVoice], score.keySignature);
     Accidental.applyAccidentals([bassVoice], score.keySignature);
 
-    const trebleBeams = Beam.generateBeams(trebleNotes);
-    const bassBeams = Beam.generateBeams(bassNotes);
+    // Beam.generateBeams() with no config defaults to grouping every 2
+    // eighth notes, which is only correct for simple time signatures.
+    // Compound meters (6/8, 9/8, 12/8, ...) group in 3s (per dotted-quarter
+    // beat); getDefaultBeamGroups() returns the musically correct grouping
+    // for whatever timeSignature this piece actually has.
+    const beamGroups = Beam.getDefaultBeamGroups(score.timeSignature);
+    const trebleBeams = Beam.generateBeams(trebleNotes, { groups: beamGroups });
+    const bassBeams = Beam.generateBeams(bassNotes, { groups: beamGroups });
 
     const minWidth = new Formatter()
       .joinVoices([trebleVoice])

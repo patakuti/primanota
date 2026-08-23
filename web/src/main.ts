@@ -1,5 +1,5 @@
 import './styles.css';
-import type { PiecesDataset } from './types.ts';
+import type { Piece, PiecesDataset, SetDefinition } from './types.ts';
 import piecesData from './data/pieces.json';
 import { noteOff, noteOn, resume, setSustain, stopAll } from './audio/synth.ts';
 import { Keyboard } from './ui/keyboard.ts';
@@ -9,6 +9,56 @@ import { playOnsetPreview, stopSharedPlayback, type OnsetPreviewVariant } from '
 
 const KEYBOARD_CLICK_VELOCITY = 90;
 const SEEK_STEP_MS = 5000;
+const ACTIVE_SET_STORAGE_KEY = 'primanota:activeSet';
+
+/** Empty/unknown setId falls back to the full dataset (02_design.md 4.5). */
+function poolForSet(dataset: PiecesDataset, setId: string | null): Piece[] {
+  if (!setId || !dataset.sets.some((s) => s.id === setId)) return dataset.pieces;
+  return dataset.pieces.filter((p) => p.sets.includes(setId));
+}
+
+function readStoredSetId(): string | null {
+  try {
+    return localStorage.getItem(ACTIVE_SET_STORAGE_KEY);
+  } catch {
+    return null;
+  }
+}
+
+function storeSetId(setId: string | null): void {
+  try {
+    if (setId) {
+      localStorage.setItem(ACTIVE_SET_STORAGE_KEY, setId);
+    } else {
+      localStorage.removeItem(ACTIVE_SET_STORAGE_KEY);
+    }
+  } catch {
+    // Private browsing / storage disabled: the selection just won't persist.
+  }
+}
+
+function populateSetSelect(select: HTMLSelectElement, dataset: PiecesDataset): void {
+  const allOption = document.createElement('option');
+  allOption.value = '';
+  allOption.textContent = `All pieces (${dataset.pieces.length})`;
+  select.appendChild(allOption);
+
+  const appendGroup = (label: string, sets: SetDefinition[]): void => {
+    if (sets.length === 0) return;
+    const group = document.createElement('optgroup');
+    group.label = label;
+    for (const s of sets) {
+      const opt = document.createElement('option');
+      opt.value = s.id;
+      opt.textContent = `${s.name} (${s.pieceCount})`;
+      group.appendChild(opt);
+    }
+    select.appendChild(group);
+  };
+
+  appendGroup('Featured', dataset.sets.filter((s) => s.kind === 'curated'));
+  appendGroup('By composer', dataset.sets.filter((s) => s.kind === 'composer'));
+}
 
 // Global one-key shortcuts (follow-up to requirement 9: even with roving
 // tabindex, having to Tab to each control at all was flagged as inconvenient,
@@ -38,7 +88,16 @@ function bootstrap(): void {
     creditEl.innerHTML = `MIDI: <a href="${url}" target="_blank" rel="noopener">${source}</a> (${author}) / ${license}`;
   }
 
-  const quiz = new QuizController(dataset.pieces);
+  const setSelect = document.getElementById('set-select') as HTMLSelectElement | null;
+  let activeSetId: string | null = null;
+  if (setSelect) {
+    populateSetSelect(setSelect, dataset);
+    const stored = readStoredSetId();
+    activeSetId = stored && dataset.sets.some((s) => s.id === stored) ? stored : null;
+    setSelect.value = activeSetId ?? '';
+  }
+
+  const quiz = new QuizController(poolForSet(dataset, activeSetId));
 
   const progressEl = document.getElementById('quiz-progress');
   const answerPanel = document.getElementById('answer-panel');
@@ -63,7 +122,7 @@ function bootstrap(): void {
 
   function renderQuizState(): void {
     if (progressEl) {
-      progressEl.textContent = `Question ${quiz.getQuestionNumber()} of ${dataset.pieces.length}`;
+      progressEl.textContent = `Question ${quiz.getQuestionNumber()} of ${quiz.getPieceCount()}`;
     }
     const revealed = quiz.getState() === 'revealed';
     if (answerPanel) {
@@ -93,6 +152,19 @@ function bootstrap(): void {
     stopSharedPlayback();
     quiz.next();
   }
+
+  setSelect?.addEventListener('change', () => {
+    stopAll();
+    stopSharedPlayback();
+    activeSetId = setSelect.value || null;
+    storeSetId(activeSetId);
+    quiz.setPool(poolForSet(dataset, activeSetId));
+    // A native <select> keeps focus after a change, so subsequent letter
+    // keys (QWERTY note input, shortcut digits) would jump its own options
+    // instead of reaching the global keydown handler below. Hand focus back
+    // to the page so playing immediately after picking a set works.
+    setSelect.blur();
+  });
 
   document.getElementById('play-onset-chord-btn')?.addEventListener('click', () => void playCurrentOnsetPreview('chord'));
   document.getElementById('play-onset-0500-btn')?.addEventListener('click', () => void playCurrentOnsetPreview('0500'));

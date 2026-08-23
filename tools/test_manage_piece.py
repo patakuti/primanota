@@ -5,12 +5,14 @@ subprocess calls to the wrapped scripts.
 """
 from pathlib import Path
 
+import manage_piece
 from manage_piece import (
     block_id,
     existing_ids,
     format_catalog_entry,
     load_blocks,
     remove_block,
+    remove_piece_id_from_sets,
     save_blocks,
 )
 
@@ -136,3 +138,42 @@ def test_format_catalog_entry_matches_hand_written_style():
         '  key: "c"\n'
         '  url: "http://piano-midi.de/midis/chopin/test.mid"'
     )
+
+
+SAMPLE_PIECE_SETS = """\
+# header comment
+
+- id: famous
+  name_en: "Most Famous"
+  piece_ids:
+    - piece_a
+    - piece_b
+    - piece_c
+"""
+
+
+def test_remove_piece_id_from_sets_drops_only_that_line(tmp_path, monkeypatch):
+    path = tmp_path / "piece_sets.yaml"
+    path.write_text(SAMPLE_PIECE_SETS, encoding="utf-8")
+    monkeypatch.setattr(manage_piece, "PIECE_SETS_PATH", path)
+
+    removed = remove_piece_id_from_sets("piece_b")
+
+    assert removed is True
+    assert path.read_text(encoding="utf-8") == SAMPLE_PIECE_SETS.replace("    - piece_b\n", "")
+
+
+def test_remove_piece_id_from_sets_missing_id_is_noop(tmp_path, monkeypatch):
+    path = tmp_path / "piece_sets.yaml"
+    path.write_text(SAMPLE_PIECE_SETS, encoding="utf-8")
+    monkeypatch.setattr(manage_piece, "PIECE_SETS_PATH", path)
+
+    removed = remove_piece_id_from_sets("no_such_piece")
+
+    assert removed is False
+    assert path.read_text(encoding="utf-8") == SAMPLE_PIECE_SETS
+
+
+def test_remove_piece_id_from_sets_missing_file_is_noop(tmp_path, monkeypatch):
+    monkeypatch.setattr(manage_piece, "PIECE_SETS_PATH", tmp_path / "no_such_file.yaml")
+    assert remove_piece_id_from_sets("piece_a") is False

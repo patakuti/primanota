@@ -24,7 +24,7 @@ function freshBag(pieces: Piece[], avoid?: Piece): Piece[] {
 }
 
 export class QuizController {
-  private readonly pieces: Piece[];
+  private pieces: Piece[];
   private bag: Piece[];
   private current: Piece;
   private state: QuizState = 'ready';
@@ -52,14 +52,38 @@ export class QuizController {
     return this.questionNumber;
   }
 
-  /** Advance to the next piece and reset to the 'ready' state. */
+  getPieceCount(): number {
+    return this.pieces.length;
+  }
+
+  /** Replace the pool of pieces to draw from (e.g. switching quiz sets,
+   * 02_design.md 4.5) and start over at question 1. Unlike next(), the
+   * question number is not carried over -- switching sets is "start fresh
+   * with this set", not "continue counting". */
+  setPool(pieces: Piece[]): void {
+    if (pieces.length === 0) {
+      throw new Error('QuizController requires at least one piece');
+    }
+    this.pieces = pieces;
+    this.bag = freshBag(pieces);
+    this.current = this.bag.shift()!;
+    this.state = 'ready';
+    this.questionNumber = 1;
+    this.notify();
+  }
+
+  /** Advance to the next piece and reset to the 'ready' state. Once every
+   * piece in the pool has been asked, the bag reshuffles and the question
+   * number restarts at 1 (rather than counting up forever past the pool
+   * size, e.g. "Question 11 of 10"). */
   next(): void {
-    if (this.bag.length === 0) {
+    const startingNewCycle = this.bag.length === 0;
+    if (startingNewCycle) {
       this.bag = freshBag(this.pieces, this.current);
     }
     this.current = this.bag.shift()!;
     this.state = 'ready';
-    this.questionNumber++;
+    this.questionNumber = startingNewCycle ? 1 : this.questionNumber + 1;
     this.notify();
   }
 

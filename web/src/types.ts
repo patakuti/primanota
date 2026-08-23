@@ -58,6 +58,7 @@ export interface Piece {
   composer: LocalizedText;
   title: LocalizedText;
   key: string | null;
+  sets: string[];
   onset: Onset;
   score: Score;
 }
@@ -69,9 +70,17 @@ export interface Credit {
   url: string;
 }
 
+export interface SetDefinition {
+  id: string;
+  name: string;
+  kind: 'curated' | 'composer';
+  pieceCount: number;
+}
+
 export interface PiecesDataset {
   version: number;
   generatedAt: string;
   credit: Credit;
+  sets: SetDefinition[];
   pieces: Piece[];
 }

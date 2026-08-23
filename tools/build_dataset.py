@@ -40,6 +40,7 @@ CREDIT = {
     "author": "Bernd Krueger",
     "license": "CC BY-SA 3.0 DE",
     "url": "http://piano-midi.de/",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
 }
 
 

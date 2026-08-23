@@ -84,8 +84,8 @@ function bootstrap(): void {
 
   const creditEl = document.getElementById('credit');
   if (creditEl) {
-    const { source, author, license, url } = dataset.credit;
-    creditEl.innerHTML = `MIDI: <a href="${url}" target="_blank" rel="noopener">${source}</a> (${author}) / ${license}`;
+    const { source, author, license, url, licenseUrl } = dataset.credit;
+    creditEl.innerHTML = `MIDI: <a href="${url}" target="_blank" rel="noopener">${source}</a> (${author}) / <a href="${licenseUrl}" target="_blank" rel="noopener">${license}</a>`;
   }
 
   const setSelect = document.getElementById('set-select') as HTMLSelectElement | null;

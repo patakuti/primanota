@@ -15,10 +15,16 @@
       "pieceCount": 10
     },
     {
+      "id": "chopin-etudes",
+      "name": "Chopin Études",
+      "kind": "curated",
+      "pieceCount": 9
+    },
+    {
       "id": "frederic-chopin",
       "name": "Frédéric Chopin",
       "kind": "composer",
-      "pieceCount": 6
+      "pieceCount": 14
     },
     {
       "id": "ludwig-van-beethoven",
@@ -76,6 +82,7 @@
       },
       "key": "c",
       "sets": [
+        "chopin-etudes",
         "frederic-chopin"
       ],
       "onset": {
@@ -6435,6 +6442,2380 @@
                   "c#/4"
                 ],
                 "duration": "q"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "chopin_etude_op10_no1",
+      "composer": {
+        "en": "Frédéric Chopin",
+        "ja": "フレデリック・ショパン"
+      },
+      "title": {
+        "en": "Étude Op.10 No.1 in C major",
+        "ja": "練習曲 作品10-1 ハ長調"
+      },
+      "key": "C",
+      "sets": [
+        "chopin-etudes",
+        "frederic-chopin"
+      ],
+      "onset": {
+        "notes": [
+          {
+            "midi": 36,
+            "velocity": 86,
+            "offsetMs": 0.0,
+            "name": {
+              "en": "C2",
+              "ja": "ハ",
+              "solfege": "ド"
+            }
+          },
+          {
+            "midi": 48,
+            "velocity": 103,
+            "offsetMs": 0.0,
+            "name": {
+              "en": "C3",
+              "ja": "ハ",
+              "solfege": "ド"
+            }
+          }
+        ],
+        "isChord": true,
+        "label": {
+          "en": "C2+C3",
+          "ja": "ハ＋ハ",
+          "solfege": "ド＋ド"
+        }
+      },
+      "score": {
+        "keySignature": "C",
+        "timeSignature": "4/4",
+        "measures": [
+          {
+            "treble": [
+              {
+                "keys": [
+                  "b/4"
+                ],
+                "duration": "qr"
+              },
+              {
+                "keys": [
+                  "e/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "g/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "e/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "g/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/6"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "e/6"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/6"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "g/6"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/7"
+                ],
+                "duration": "16"
+              }
+            ],
+            "bass": [
+              {
+                "keys": [
+                  "c/2",
+                  "c/3"
+                ],
+                "duration": "8"
+              },
+              {
+                "keys": [
+                  "g/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/4"
+                ],
+                "duration": "hd",
+                "tiedToNext": true
+              },
+              {
+                "keys": [
+                  "c/4"
+                ],
+                "duration": "16"
+              }
+            ]
+          },
+          {
+            "treble": [
+              {
+                "keys": [
+                  "e/7"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/7"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "g/6"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/6"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "e/6"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/6"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "g/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "e/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "g/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "e/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/4"
+                ],
+                "duration": "8d"
+              }
+            ],
+            "bass": [
+              {
+                "keys": [
+                  "d/3"
+                ],
+                "duration": "hdr"
+              },
+              {
+                "keys": [
+                  "d/3"
+                ],
+                "duration": "8r"
+              },
+              {
+                "keys": [
+                  "g/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/3"
+                ],
+                "duration": "16"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "chopin_etude_op10_no5",
+      "composer": {
+        "en": "Frédéric Chopin",
+        "ja": "フレデリック・ショパン"
+      },
+      "title": {
+        "en": "Étude Op.10 No.5 in G-flat major \"Black Key\"",
+        "ja": "練習曲 作品10-5 変ト長調「黒鍵」"
+      },
+      "key": "Gb",
+      "sets": [
+        "chopin-etudes",
+        "frederic-chopin"
+      ],
+      "onset": {
+        "notes": [
+          {
+            "midi": 54,
+            "velocity": 75,
+            "offsetMs": 0.0,
+            "name": {
+              "en": "Gb3",
+              "ja": "変ト",
+              "solfege": "ソ♭"
+            }
+          },
+          {
+            "midi": 58,
+            "velocity": 75,
+            "offsetMs": 0.0,
+            "name": {
+              "en": "Bb3",
+              "ja": "変ロ",
+              "solfege": "シ♭"
+            }
+          },
+          {
+            "midi": 61,
+            "velocity": 75,
+            "offsetMs": 0.0,
+            "name": {
+              "en": "Db4",
+              "ja": "変ニ",
+              "solfege": "レ♭"
+            }
+          },
+          {
+            "midi": 66,
+            "velocity": 89,
+            "offsetMs": 0.0,
+            "name": {
+              "en": "Gb4",
+              "ja": "変ト",
+              "solfege": "ソ♭"
+            }
+          },
+          {
+            "midi": 90,
+            "velocity": 99,
+            "offsetMs": 0.0,
+            "name": {
+              "en": "Gb6",
+              "ja": "変ト",
+              "solfege": "ソ♭"
+            }
+          }
+        ],
+        "isChord": true,
+        "label": {
+          "en": "Gb3+Bb3+Db4+Gb4+Gb6",
+          "ja": "変ト＋変ロ＋変ニ＋変ト＋変ト",
+          "solfege": "ソ♭＋シ♭＋レ♭＋ソ♭＋ソ♭"
+        }
+      },
+      "score": {
+        "keySignature": "Gb",
+        "timeSignature": "2/4",
+        "measures": [
+          {
+            "treble": [
+              {
+                "keys": [
+                  "gb/6"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "bb/6"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "db/6"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "gb/6"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "eb/6"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "gb/6"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "db/6"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "gb/6"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "bb/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "db/6"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "gb/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "bb/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              }
+            ],
+            "bass": [
+              {
+                "keys": [
+                  "bb/3",
+                  "db/4",
+                  "gb/3",
+                  "gb/4"
+                ],
+                "duration": "16d"
+              },
+              {
+                "keys": [
+                  "b/3",
+                  "eb/4",
+                  "gb/3",
+                  "gb/4"
+                ],
+                "duration": "8"
+              },
+              {
+                "keys": [
+                  "bb/3",
+                  "db/4",
+                  "gb/3",
+                  "gb/4"
+                ],
+                "duration": "q"
+              }
+            ]
+          },
+          {
+            "treble": [
+              {
+                "keys": [
+                  "gb/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "bb/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "db/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "gb/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "eb/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "gb/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "db/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "gb/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "bb/4"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "db/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "gb/4"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "bb/4"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              }
+            ],
+            "bass": [
+              {
+                "keys": [
+                  "gb/2",
+                  "gb/3"
+                ],
+                "duration": "8"
+              },
+              {
+                "keys": [
+                  "b/3",
+                  "eb/4",
+                  "gb/4"
+                ],
+                "duration": "8"
+              },
+              {
+                "keys": [
+                  "bb/3",
+                  "db/4",
+                  "gb/4"
+                ],
+                "duration": "q"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "chopin_etude_op25_no1",
+      "composer": {
+        "en": "Frédéric Chopin",
+        "ja": "フレデリック・ショパン"
+      },
+      "title": {
+        "en": "Étude Op.25 No.1 in A-flat major \"Harp\"",
+        "ja": "練習曲 作品25-1 変イ長調「エオリアンハープ」"
+      },
+      "key": "Ab",
+      "sets": [
+        "chopin-etudes",
+        "frederic-chopin"
+      ],
+      "onset": {
+        "notes": [
+          {
+            "midi": 75,
+            "velocity": 49,
+            "offsetMs": 0.0,
+            "name": {
+              "en": "Eb5",
+              "ja": "変ホ",
+              "solfege": "ミ♭"
+            }
+          }
+        ],
+        "isChord": false,
+        "label": {
+          "en": "Eb5",
+          "ja": "変ホ",
+          "solfege": "ミ♭"
+        }
+      },
+      "score": {
+        "keySignature": "Ab",
+        "timeSignature": "4/4",
+        "measures": [
+          {
+            "treble": [
+              {
+                "keys": [
+                  "b/4"
+                ],
+                "duration": "hdr"
+              },
+              {
+                "keys": [
+                  "eb/5"
+                ],
+                "duration": "q"
+              }
+            ],
+            "bass": [
+              {
+                "keys": [
+                  "d/3"
+                ],
+                "duration": "wr"
+              }
+            ]
+          },
+          {
+            "treble": [
+              {
+                "keys": [
+                  "eb/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "ab/4"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "eb/4"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "ab/4"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "eb/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "ab/4"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "eb/4"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "ab/4"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "eb/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "ab/4"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "eb/4"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "ab/4"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "eb/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "ab/4"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "eb/4"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "ab/4"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              }
+            ],
+            "bass": [
+              {
+                "keys": [
+                  "ab/1"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "eb/3"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "ab/3"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "c/4"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "ab/3"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "eb/3"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "ab/2"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "eb/3"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "ab/3"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "c/4"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "ab/3"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "eb/3"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "ab/2"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "eb/3"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "ab/3"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "c/4"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "ab/3"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "eb/3"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "ab/2"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "eb/3"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "ab/3"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "c/4"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "ab/3"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "eb/3"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "chopin_etude_op25_no2",
+      "composer": {
+        "en": "Frédéric Chopin",
+        "ja": "フレデリック・ショパン"
+      },
+      "title": {
+        "en": "Étude Op.25 No.2 in F minor",
+        "ja": "練習曲 作品25-2 ヘ短調"
+      },
+      "key": "f",
+      "sets": [
+        "chopin-etudes",
+        "frederic-chopin"
+      ],
+      "onset": {
+        "notes": [
+          {
+            "midi": 72,
+            "velocity": 51,
+            "offsetMs": 0.0,
+            "name": {
+              "en": "C5",
+              "ja": "ハ",
+              "solfege": "ド"
+            }
+          }
+        ],
+        "isChord": false,
+        "label": {
+          "en": "C5",
+          "ja": "ハ",
+          "solfege": "ド"
+        }
+      },
+      "score": {
+        "keySignature": "Fm",
+        "timeSignature": "2/4",
+        "measures": [
+          {
+            "treble": [
+              {
+                "keys": [
+                  "b/4"
+                ],
+                "duration": "qdr"
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "8"
+              }
+            ],
+            "bass": [
+              {
+                "keys": [
+                  "d/3"
+                ],
+                "duration": "hr"
+              }
+            ]
+          },
+          {
+            "treble": [
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "db/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "b/4"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "eb/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "db/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "db/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "b/4"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "gb/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "g/5"
+                ],
+                "duration": "16",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              }
+            ],
+            "bass": [
+              {
+                "keys": [
+                  "e/3"
+                ],
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "g/4"
+                ],
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "c/4"
+                ],
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "bb/3"
+                ],
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "g/4"
+                ],
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              },
+              {
+                "keys": [
+                  "c/4"
+                ],
+                "duration": "8",
+                "tuplet": {
+                  "numNotes": 3,
+                  "notesOccupied": 2
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "chopin_etude_op25_no3",
+      "composer": {
+        "en": "Frédéric Chopin",
+        "ja": "フレデリック・ショパン"
+      },
+      "title": {
+        "en": "Étude Op.25 No.3 in F major",
+        "ja": "練習曲 作品25-3 ヘ長調"
+      },
+      "key": "F",
+      "sets": [
+        "chopin-etudes",
+        "frederic-chopin"
+      ],
+      "onset": {
+        "notes": [
+          {
+            "midi": 72,
+            "velocity": 61,
+            "offsetMs": 0.0,
+            "name": {
+              "en": "C5",
+              "ja": "ハ",
+              "solfege": "ド"
+            }
+          }
+        ],
+        "isChord": false,
+        "label": {
+          "en": "C5",
+          "ja": "ハ",
+          "solfege": "ド"
+        }
+      },
+      "score": {
+        "keySignature": "F",
+        "timeSignature": "3/4",
+        "measures": [
+          {
+            "treble": [
+              {
+                "keys": [
+                  "b/4"
+                ],
+                "duration": "hr"
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "q"
+              }
+            ],
+            "bass": [
+              {
+                "keys": [
+                  "d/3"
+                ],
+                "duration": "hdr"
+              }
+            ]
+          },
+          {
+            "treble": [
+              {
+                "keys": [
+                  "d/5",
+                  "f/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "f/5"
+                ],
+                "duration": "8"
+              },
+              {
+                "keys": [
+                  "c/4",
+                  "g/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "f/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "8"
+              },
+              {
+                "keys": [
+                  "d/5",
+                  "f/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "f/5"
+                ],
+                "duration": "8"
+              }
+            ],
+            "bass": [
+              {
+                "keys": [
+                  "a/3",
+                  "c/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "f/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "f/2"
+                ],
+                "duration": "8"
+              },
+              {
+                "keys": [
+                  "a/3",
+                  "c/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "f/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "f/2"
+                ],
+                "duration": "8"
+              },
+              {
+                "keys": [
+                  "a/3",
+                  "c/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "f/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "f/2"
+                ],
+                "duration": "8"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "chopin_etude_op25_no4",
+      "composer": {
+        "en": "Frédéric Chopin",
+        "ja": "フレデリック・ショパン"
+      },
+      "title": {
+        "en": "Étude Op.25 No.4 in A minor",
+        "ja": "練習曲 作品25-4 イ短調"
+      },
+      "key": "a",
+      "sets": [
+        "chopin-etudes",
+        "frederic-chopin"
+      ],
+      "onset": {
+        "notes": [
+          {
+            "midi": 52,
+            "velocity": 55,
+            "offsetMs": 0.0,
+            "name": {
+              "en": "E3",
+              "ja": "ホ",
+              "solfege": "ミ"
+            }
+          }
+        ],
+        "isChord": false,
+        "label": {
+          "en": "E3",
+          "ja": "ホ",
+          "solfege": "ミ"
+        }
+      },
+      "score": {
+        "keySignature": "Am",
+        "timeSignature": "4/4",
+        "measures": [
+          {
+            "treble": [
+              {
+                "keys": [
+                  "b/4"
+                ],
+                "duration": "wr"
+              }
+            ],
+            "bass": [
+              {
+                "keys": [
+                  "d/3"
+                ],
+                "duration": "hdr"
+              },
+              {
+                "keys": [
+                  "e/3"
+                ],
+                "duration": "q"
+              }
+            ]
+          },
+          {
+            "treble": [
+              {
+                "keys": [
+                  "b/4"
+                ],
+                "duration": "8r"
+              },
+              {
+                "keys": [
+                  "a/4",
+                  "e/4",
+                  "e/5"
+                ],
+                "duration": "q"
+              },
+              {
+                "keys": [
+                  "a/4",
+                  "a/5",
+                  "e/5"
+                ],
+                "duration": "q"
+              },
+              {
+                "keys": [
+                  "a/4",
+                  "a/5",
+                  "d/5"
+                ],
+                "duration": "q"
+              },
+              {
+                "keys": [
+                  "e/5",
+                  "g#/4",
+                  "g#/5"
+                ],
+                "duration": "8"
+              }
+            ],
+            "bass": [
+              {
+                "keys": [
+                  "a/2"
+                ],
+                "duration": "8"
+              },
+              {
+                "keys": [
+                  "c/4",
+                  "e/3"
+                ],
+                "duration": "8"
+              },
+              {
+                "keys": [
+                  "c/3"
+                ],
+                "duration": "8"
+              },
+              {
+                "keys": [
+                  "a/3",
+                  "e/4"
+                ],
+                "duration": "8"
+              },
+              {
+                "keys": [
+                  "b/2"
+                ],
+                "duration": "8"
+              },
+              {
+                "keys": [
+                  "d/4",
+                  "f/3"
+                ],
+                "duration": "8"
+              },
+              {
+                "keys": [
+                  "e/3"
+                ],
+                "duration": "8"
+              },
+              {
+                "keys": [
+                  "b/3",
+                  "e/4"
+                ],
+                "duration": "8"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "chopin_etude_op25_no11",
+      "composer": {
+        "en": "Frédéric Chopin",
+        "ja": "フレデリック・ショパン"
+      },
+      "title": {
+        "en": "Étude Op.25 No.11 in A minor \"Winter Wind\"",
+        "ja": "練習曲 作品25-11 イ短調「木枯らし」"
+      },
+      "key": "a",
+      "sets": [
+        "chopin-etudes",
+        "frederic-chopin"
+      ],
+      "onset": {
+        "notes": [
+          {
+            "midi": 64,
+            "velocity": 60,
+            "offsetMs": 0.0,
+            "name": {
+              "en": "E4",
+              "ja": "ホ",
+              "solfege": "ミ"
+            }
+          }
+        ],
+        "isChord": false,
+        "label": {
+          "en": "E4",
+          "ja": "ホ",
+          "solfege": "ミ"
+        }
+      },
+      "score": {
+        "keySignature": "Am",
+        "timeSignature": "4/4",
+        "measures": [
+          {
+            "treble": [
+              {
+                "keys": [
+                  "e/4"
+                ],
+                "duration": "q"
+              },
+              {
+                "keys": [
+                  "e/4"
+                ],
+                "duration": "8d"
+              },
+              {
+                "keys": [
+                  "e/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "e/4"
+                ],
+                "duration": "q"
+              },
+              {
+                "keys": [
+                  "f/4"
+                ],
+                "duration": "q"
+              }
+            ],
+            "bass": [
+              {
+                "keys": [
+                  "d/3"
+                ],
+                "duration": "wr"
+              }
+            ]
+          },
+          {
+            "treble": [
+              {
+                "keys": [
+                  "e/4"
+                ],
+                "duration": "q"
+              },
+              {
+                "keys": [
+                  "c/4"
+                ],
+                "duration": "q"
+              },
+              {
+                "keys": [
+                  "e/4"
+                ],
+                "duration": "h"
+              }
+            ],
+            "bass": [
+              {
+                "keys": [
+                  "d/3"
+                ],
+                "duration": "wr"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "chopin_etude_op25_no12",
+      "composer": {
+        "en": "Frédéric Chopin",
+        "ja": "フレデリック・ショパン"
+      },
+      "title": {
+        "en": "Étude Op.25 No.12 in C minor",
+        "ja": "練習曲 作品25-12 ハ短調"
+      },
+      "key": "c",
+      "sets": [
+        "chopin-etudes",
+        "frederic-chopin"
+      ],
+      "onset": {
+        "notes": [
+          {
+            "midi": 36,
+            "velocity": 61,
+            "offsetMs": 0.0,
+            "name": {
+              "en": "C2",
+              "ja": "ハ",
+              "solfege": "ド"
+            }
+          },
+          {
+            "midi": 51,
+            "velocity": 83,
+            "offsetMs": 0.0,
+            "name": {
+              "en": "Eb3",
+              "ja": "変ホ",
+              "solfege": "ミ♭"
+            }
+          }
+        ],
+        "isChord": true,
+        "label": {
+          "en": "C2+Eb3",
+          "ja": "ハ＋変ホ",
+          "solfege": "ド＋ミ♭"
+        }
+      },
+      "score": {
+        "keySignature": "Cm",
+        "timeSignature": "4/4",
+        "measures": [
+          {
+            "treble": [
+              {
+                "keys": [
+                  "eb/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "g/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "eb/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "eb/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "g/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "eb/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "eb/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "g/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "eb/6"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "g/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "eb/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "eb/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "g/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "eb/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "eb/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "g/3"
+                ],
+                "duration": "16"
+              }
+            ],
+            "bass": [
+              {
+                "keys": [
+                  "c/2"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "g/2"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "g/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "g/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "g/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "g/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "g/2"
+                ],
+                "duration": "16"
+              }
+            ]
+          },
+          {
+            "treble": [
+              {
+                "keys": [
+                  "d/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "ab/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "d/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "d/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "ab/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "d/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "d/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "ab/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "d/6"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "ab/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "d/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "d/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "ab/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "d/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "d/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "ab/3"
+                ],
+                "duration": "16"
+              }
+            ],
+            "bass": [
+              {
+                "keys": [
+                  "c/2"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "f/2"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "f/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "f/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/5"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "f/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/4"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "f/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "c/3"
+                ],
+                "duration": "16"
+              },
+              {
+                "keys": [
+                  "f/2"
+                ],
+                "duration": "16"
               }
             ]
           }

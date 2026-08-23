@@ -1,0 +1,31 @@
+{
+  "id": "chopin_etude_op25_no11",
+  "t0Sec": 0.0,
+  "isChord": false,
+  "notes": [
+    {
+      "midi": 64,
+      "velocity": 60,
+      "offsetMs": 0.0,
+      "durationMs": 813.45,
+      "track": 1,
+      "name": {
+        "en": "E4",
+        "ja": "ホ",
+        "solfege": "ミ"
+      }
+    }
+  ],
+  "label": {
+    "en": "E4",
+    "ja": "ホ",
+    "solfege": "ミ"
+  },
+  "midiKeySignature": "C",
+  "catalogKey": "a",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 3161
+}

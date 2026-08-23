@@ -1,0 +1,43 @@
+{
+  "id": "chopin_etude_op25_no12",
+  "t0Sec": 0.0,
+  "isChord": true,
+  "notes": [
+    {
+      "midi": 36,
+      "velocity": 61,
+      "offsetMs": 0.0,
+      "durationMs": 105.51,
+      "track": 2,
+      "name": {
+        "en": "C2",
+        "ja": "ハ",
+        "solfege": "ド"
+      }
+    },
+    {
+      "midi": 51,
+      "velocity": 83,
+      "offsetMs": 0.0,
+      "durationMs": 105.51,
+      "track": 1,
+      "name": {
+        "en": "Eb3",
+        "ja": "変ホ",
+        "solfege": "ミ♭"
+      }
+    }
+  ],
+  "label": {
+    "en": "C2+Eb3",
+    "ja": "ハ＋変ホ",
+    "solfege": "ド＋ミ♭"
+  },
+  "midiKeySignature": "Eb",
+  "catalogKey": "c",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 2634
+}

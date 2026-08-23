@@ -19,3 +19,16 @@
     - liszt_hungarian_rhapsody_no2
     - liszt_la_campanella
     - schumann_traumerei
+
+- id: chopin-etudes
+  name_en: "Chopin Études"
+  piece_ids:
+    - chopin_etude_op10_no1
+    - chopin_etude_op10_no5
+    - chopin_etude_op10_no12
+    - chopin_etude_op25_no1
+    - chopin_etude_op25_no2
+    - chopin_etude_op25_no3
+    - chopin_etude_op25_no4
+    - chopin_etude_op25_no11
+    - chopin_etude_op25_no12

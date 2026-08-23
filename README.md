@@ -4,6 +4,8 @@ A front-end-only web app: listen to the "opening note" of a classical piano
 masterpiece, check it against the on-screen keyboard, and guess the note
 name, composer, and title.
 
+**Play it here: https://patakuti.github.io/primanota/**
+
 ![PrimaNota screenshot](docs/screenshot.png)
 
 ## Overview

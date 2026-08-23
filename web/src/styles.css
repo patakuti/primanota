@@ -216,6 +216,12 @@ button:focus-visible,
   overflow-x: auto;
 }
 
+.score-note {
+  margin: 4px 0 0;
+  font-size: 0.8rem;
+  color: var(--color-fg-muted);
+}
+
 .playback-controls {
   display: flex;
   flex-wrap: wrap;

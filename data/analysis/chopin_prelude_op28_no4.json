@@ -1,0 +1,31 @@
+{
+  "id": "chopin_prelude_op28_no4",
+  "t0Sec": 0.9474,
+  "isChord": false,
+  "notes": [
+    {
+      "midi": 59,
+      "velocity": 55,
+      "offsetMs": 0.0,
+      "durationMs": 836.12,
+      "track": 1,
+      "name": {
+        "en": "B3",
+        "ja": "ロ",
+        "solfege": "シ"
+      }
+    }
+  ],
+  "label": {
+    "en": "B3",
+    "ja": "ロ",
+    "solfege": "シ"
+  },
+  "midiKeySignature": "G",
+  "catalogKey": "e",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 604
+}

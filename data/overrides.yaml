@@ -1,10 +1,21 @@
-# Manual corrections to the automatic onset extraction (02_design.md 3.4).
-# Applied by tools/analyze_midi.py after the raw ONSET_WINDOW grouping.
+# Manual corrections to the automatic onset extraction (02_design.md 3.4)
+# and, optionally, the automatic score extraction (3.6). Applied by
+# tools/analyze_midi.py (onset) and tools/build_dataset.py (score).
 #
 # Each entry's `onset.midis` replaces the auto-detected onset group with a
 # different set of MIDI note numbers, looked up from the same MIDI file
 # (the actual note-on events found nearby in time -- never fabricated
-# pitches). `reason` documents why, including source and confidence.
+# pitches). `onset.spread_sec` optionally widens the cluster-matching
+# window past the default ONSET_WINDOW_SEC (50ms) for a chord that's
+# genuinely rolled/arpeggiated across more than 50ms in this specific
+# transcription. `reason` documents why, including source and confidence.
+#
+# An entry's `score` key, if present, wholesale-replaces the auto-extracted
+# `score` object for that piece (3.6/3.8 schema) -- for cases where the
+# piano-roll-to-notation heuristic in tools/score_extract.py gets the
+# rhythm/grouping wrong (e.g. an arpeggiated opening chord breaks its
+# tuplet-detection). Still built only from real MIDI note events for that
+# piece, just re-grouped/re-quantized by hand.
 
 - id: beethoven_waldstein_1
   onset:
@@ -18,3 +29,110 @@
     answer. Confidence: medium (based on secondary sources describing the
     passage as chordal; not verified against the printed score or by
     listening to this exact MIDI transcription).
+
+- id: chopin_prelude_op28_no16
+  onset:
+    midis: [29, 41, 63, 69, 78]
+    spread_sec: 0.2
+  score:
+    keySignature: "Bbm"
+    timeSignature: "4/4"
+    measures:
+      - treble:
+          - keys: ["eb/4", "a/4", "gb/5"]
+            duration: "q"
+            tuplet: { numNotes: 3, notesOccupied: 2 }
+          - keys: ["a/4", "eb/4", "f/5"]
+            duration: "q"
+            tuplet: { numNotes: 3, notesOccupied: 2 }
+          - keys: ["eb/4", "a/4", "e/5"]
+            duration: "q"
+            tuplet: { numNotes: 3, notesOccupied: 2 }
+          - keys: ["a/4", "eb/4", "eb/5"]
+            duration: "q"
+            tuplet: { numNotes: 3, notesOccupied: 2 }
+          - keys: ["a/4", "eb/4", "db/5"]
+            duration: "q"
+            tuplet: { numNotes: 3, notesOccupied: 2 }
+          - keys: ["a/4", "eb/4", "c/5"]
+            duration: "q"
+            tuplet: { numNotes: 3, notesOccupied: 2 }
+        bass:
+          - keys: ["f/1", "f/2"]
+            duration: "q"
+            tuplet: { numNotes: 3, notesOccupied: 2 }
+          - keys: ["c/3", "f/3", "c/4"]
+            duration: "q"
+            tuplet: { numNotes: 3, notesOccupied: 2 }
+          - keys: ["c/3", "f/3", "c/4"]
+            duration: "q"
+            tuplet: { numNotes: 3, notesOccupied: 2 }
+          - keys: ["c/3", "f/3", "c/4"]
+            duration: "q"
+            tuplet: { numNotes: 3, notesOccupied: 2 }
+          - keys: ["c/3", "f/3", "c/4"]
+            duration: "q"
+            tuplet: { numNotes: 3, notesOccupied: 2 }
+          - keys: ["c/3", "f/3", "c/4"]
+            duration: "q"
+            tuplet: { numNotes: 3, notesOccupied: 2 }
+      - treble:
+          - keys: ["f/5"]
+            duration: "16"
+          - keys: ["eb/5"]
+            duration: "16"
+          - keys: ["c/5"]
+            duration: "16"
+          - keys: ["db/5"]
+            duration: "16"
+          - keys: ["f/4"]
+            duration: "16"
+          - keys: ["a/4"]
+            duration: "16"
+          - keys: ["bb/4"]
+            duration: "16"
+          - keys: ["c/5"]
+            duration: "16"
+          - keys: ["db/5"]
+            duration: "16"
+          - keys: ["eb/5"]
+            duration: "16"
+          - keys: ["f/5"]
+            duration: "16"
+          - keys: ["g/5"]
+            duration: "16"
+          - keys: ["a/5"]
+            duration: "16"
+          - keys: ["bb/5"]
+            duration: "16"
+          - keys: ["c/6"]
+            duration: "16"
+          - keys: ["db/6"]
+            duration: "16"
+        bass:
+          - keys: ["bb/2"]
+            duration: "8"
+          - keys: ["db/4", "f/3"]
+            duration: "q"
+          - keys: ["f/2"]
+            duration: "8"
+          - keys: ["bb/2"]
+            duration: "8"
+          - keys: ["db/4", "f/3"]
+            duration: "q"
+          - keys: ["f/2"]
+            duration: "8"
+  reason: >
+    onset: auto extraction (ONSET_WINDOW=50ms) only caught the first roll
+    note (Eb4, MIDI 63); the full opening chord -- LH F1+F2 octave, RH
+    Eb4/A(natural)4/Gb5, MIDIs [29,41,63,69,78] -- is rolled across ~180ms
+    in this transcription (widened via spread_sec). score: measure 1's
+    tuplet detection failed on the same rolled chord (irregular onset
+    gaps), so score_extract.py fell back to raw duration quantization
+    (mixed 32nd/16th/quarter tokens) instead of recognizing the full bar
+    as two groups of quarter-note triplets in both hands; hand-corrected
+    using the real note-on events at ticks 0/320/640/960/1280/1600 of
+    measure 1 (960 ticks = 2 beats / 3 = 320 ticks per triplet note).
+    Measure 2 is left as auto-extracted (not reported as wrong).
+    Confidence: high (onset chord and rhythm directly confirmed by the
+    user against the printed score, 2026-08-23).

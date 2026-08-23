@@ -1,0 +1,67 @@
+{
+  "id": "chopin_prelude_op28_no6",
+  "t0Sec": 0.0027,
+  "isChord": true,
+  "notes": [
+    {
+      "midi": 47,
+      "velocity": 38,
+      "offsetMs": 0.0,
+      "durationMs": 310.09,
+      "track": 2,
+      "name": {
+        "en": "B2",
+        "ja": "ロ",
+        "solfege": "シ"
+      }
+    },
+    {
+      "midi": 62,
+      "velocity": 28,
+      "offsetMs": 0.0,
+      "durationMs": 1165.76,
+      "track": 1,
+      "name": {
+        "en": "D4",
+        "ja": "ニ",
+        "solfege": "レ"
+      }
+    },
+    {
+      "midi": 66,
+      "velocity": 28,
+      "offsetMs": 0.0,
+      "durationMs": 1165.76,
+      "track": 1,
+      "name": {
+        "en": "F#4",
+        "ja": "嬰ヘ",
+        "solfege": "ファ♯"
+      }
+    },
+    {
+      "midi": 71,
+      "velocity": 35,
+      "offsetMs": 0.0,
+      "durationMs": 601.84,
+      "track": 1,
+      "name": {
+        "en": "B4",
+        "ja": "ロ",
+        "solfege": "シ"
+      }
+    }
+  ],
+  "label": {
+    "en": "B2+D4+F#4+B4",
+    "ja": "ロ＋ニ＋嬰ヘ＋ロ",
+    "solfege": "シ＋レ＋ファ♯＋シ"
+  },
+  "midiKeySignature": "D",
+  "catalogKey": "b",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 405
+}

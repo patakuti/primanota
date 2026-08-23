@@ -90,10 +90,15 @@ def analyze_piece(piece: dict, overrides: dict[str, dict]) -> dict:
     if override and "midis" in override.get("onset", {}):
         target_midi_set = set(override["onset"]["midis"])
         # Search a wider window for an onset cluster (notes within
-        # ONSET_WINDOW_SEC of each other) whose pitch set exactly matches
+        # cluster_window_sec of each other) whose pitch set exactly matches
         # the override -- never fabricate velocity/timing, only pick real
-        # note-on events from this same MIDI file.
+        # note-on events from this same MIDI file. cluster_window_sec
+        # defaults to ONSET_WINDOW_SEC (near-simultaneous chord) but can be
+        # widened via the override's `spread_sec` for a hand-verified chord
+        # that's genuinely rolled/arpeggiated across more than 50ms in this
+        # specific transcription (e.g. chopin_prelude_op28_no16).
         search_window_sec = 2.0
+        cluster_window_sec = override["onset"].get("spread_sec", ONSET_WINDOW_SEC)
         candidates = sorted(
             (n for n in notes if n.start_sec - t0 <= search_window_sec),
             key=lambda n: n.start_sec,
@@ -104,7 +109,7 @@ def analyze_piece(piece: dict, overrides: dict[str, dict]) -> dict:
             cluster_start = candidates[i].start_sec
             cluster = [
                 n for n in candidates
-                if cluster_start <= n.start_sec <= cluster_start + ONSET_WINDOW_SEC
+                if cluster_start <= n.start_sec <= cluster_start + cluster_window_sec
             ]
             if {n.midi for n in cluster} == target_midi_set:
                 matched_cluster = cluster

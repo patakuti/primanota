@@ -152,7 +152,8 @@
                   "f/5",
                   "g/5"
                 ],
-                "duration": "hd"
+                "duration": "hd",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -162,7 +163,8 @@
                   "f/5",
                   "g/5"
                 ],
-                "duration": "8d"
+                "duration": "8d",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -1373,7 +1375,8 @@
                   "eb/3",
                   "g/3"
                 ],
-                "duration": "h"
+                "duration": "h",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -1430,7 +1433,8 @@
                   "eb/2",
                   "g/2"
                 ],
-                "duration": "h"
+                "duration": "h",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -1469,7 +1473,8 @@
                 "keys": [
                   "g/3"
                 ],
-                "duration": "qd"
+                "duration": "qd",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -1493,7 +1498,8 @@
                   "d/4",
                   "f/4"
                 ],
-                "duration": "h"
+                "duration": "h",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -1549,7 +1555,8 @@
                 "keys": [
                   "ab/3"
                 ],
-                "duration": "h"
+                "duration": "h",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -1579,7 +1586,8 @@
                 "keys": [
                   "eb/3"
                 ],
-                "duration": "hd"
+                "duration": "hd",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -2297,7 +2305,8 @@
                 "keys": [
                   "c/4"
                 ],
-                "duration": "q"
+                "duration": "q",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -2329,7 +2338,8 @@
                 "keys": [
                   "c/2"
                 ],
-                "duration": "q"
+                "duration": "q",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -2351,7 +2361,8 @@
                 "keys": [
                   "f/3"
                 ],
-                "duration": "w"
+                "duration": "w",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -2363,7 +2374,8 @@
                 "keys": [
                   "ab/3"
                 ],
-                "duration": "q"
+                "duration": "q",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -2383,7 +2395,8 @@
                 "keys": [
                   "f/1"
                 ],
-                "duration": "w"
+                "duration": "w",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -2395,7 +2408,8 @@
                 "keys": [
                   "ab/1"
                 ],
-                "duration": "q"
+                "duration": "q",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -3161,7 +3175,8 @@
                   "eb/2",
                   "eb/3"
                 ],
-                "duration": "w"
+                "duration": "w",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -3428,7 +3443,8 @@
                   "a/4",
                   "gb/4"
                 ],
-                "duration": "w"
+                "duration": "w",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -4515,7 +4531,8 @@
                 "keys": [
                   "b/4"
                 ],
-                "duration": "8d"
+                "duration": "8d",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -4854,7 +4871,8 @@
                 "keys": [
                   "c/3"
                 ],
-                "duration": "h"
+                "duration": "h",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -4886,7 +4904,8 @@
                 "keys": [
                   "c/2"
                 ],
-                "duration": "h"
+                "duration": "h",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -5521,7 +5540,8 @@
                 "keys": [
                   "e/4"
                 ],
-                "duration": "qd"
+                "duration": "qd",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -5539,7 +5559,8 @@
                 "keys": [
                   "e/4"
                 ],
-                "duration": "qd"
+                "duration": "qd",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -5641,7 +5662,8 @@
                 "keys": [
                   "d/4"
                 ],
-                "duration": "qd"
+                "duration": "qd",
+                "tiedToNext": true
               },
               {
                 "keys": [
@@ -5659,7 +5681,8 @@
                 "keys": [
                   "d/4"
                 ],
-                "duration": "qd"
+                "duration": "qd",
+                "tiedToNext": true
               },
               {
                 "keys": [

@@ -1,0 +1,79 @@
+{
+  "id": "chopin_etude_op10_no5",
+  "t0Sec": 0.0011,
+  "isChord": true,
+  "notes": [
+    {
+      "midi": 54,
+      "velocity": 75,
+      "offsetMs": 0.0,
+      "durationMs": 96.98,
+      "track": 2,
+      "name": {
+        "en": "Gb3",
+        "ja": "変ト",
+        "solfege": "ソ♭"
+      }
+    },
+    {
+      "midi": 58,
+      "velocity": 75,
+      "offsetMs": 0.0,
+      "durationMs": 96.98,
+      "track": 2,
+      "name": {
+        "en": "Bb3",
+        "ja": "変ロ",
+        "solfege": "シ♭"
+      }
+    },
+    {
+      "midi": 61,
+      "velocity": 75,
+      "offsetMs": 0.0,
+      "durationMs": 96.98,
+      "track": 2,
+      "name": {
+        "en": "Db4",
+        "ja": "変ニ",
+        "solfege": "レ♭"
+      }
+    },
+    {
+      "midi": 66,
+      "velocity": 89,
+      "offsetMs": 0.0,
+      "durationMs": 96.98,
+      "track": 2,
+      "name": {
+        "en": "Gb4",
+        "ja": "変ト",
+        "solfege": "ソ♭"
+      }
+    },
+    {
+      "midi": 90,
+      "velocity": 99,
+      "offsetMs": 0.0,
+      "durationMs": 86.21,
+      "track": 1,
+      "name": {
+        "en": "Gb6",
+        "ja": "変ト",
+        "solfege": "ソ♭"
+      }
+    }
+  ],
+  "label": {
+    "en": "Gb3+Bb3+Db4+Gb4+Gb6",
+    "ja": "変ト＋変ロ＋変ニ＋変ト＋変ト",
+    "solfege": "ソ♭＋シ♭＋レ♭＋ソ♭＋ソ♭"
+  },
+  "midiKeySignature": "Gb",
+  "catalogKey": "Gb",
+  "keyMatchesMidi": true,
+  "warnings": [],
+  "overrideApplied": false,
+  "overrideReason": null,
+  "totalNotesInFile": 1630
+}

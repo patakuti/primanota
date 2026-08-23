@@ -1,4 +1,4 @@
-# Selected pieces for PrimaNota (25 pieces / 8 composers).
+# Selected pieces for PrimaNota (36 pieces / 8 composers).
 # Selected from tools/catalog_raw.yaml, favoring famous titled works
 # (01_requirements.md: "有名な標題付き曲"中心).
 #
@@ -235,3 +235,67 @@
   title_ja: "平均律クラヴィーア曲集 第1巻 前奏曲とフーガ ニ長調 BWV 850"
   key: "D"
   url: "http://piano-midi.de/midis/bach/bach_850.mid"
+
+- id: chopin_etude_op10_no1
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Étude Op.10 No.1 in C major"
+  title_ja: "練習曲 作品10-1 ハ長調"
+  key: "C"
+  url: "http://piano-midi.de/midis/chopin/chpn_op10_e01.mid"
+
+- id: chopin_etude_op10_no5
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Étude Op.10 No.5 in G-flat major \"Black Key\""
+  title_ja: "練習曲 作品10-5 変ト長調「黒鍵」"
+  key: "Gb"
+  url: "http://piano-midi.de/midis/chopin/chpn_op10_e05.mid"
+
+- id: chopin_etude_op25_no1
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Étude Op.25 No.1 in A-flat major \"Harp\""
+  title_ja: "練習曲 作品25-1 変イ長調「エオリアンハープ」"
+  key: "Ab"
+  url: "http://piano-midi.de/midis/chopin/chpn_op25_e1.mid"
+
+- id: chopin_etude_op25_no2
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Étude Op.25 No.2 in F minor"
+  title_ja: "練習曲 作品25-2 ヘ短調"
+  key: "f"
+  url: "http://piano-midi.de/midis/chopin/chpn_op25_e2.mid"
+
+- id: chopin_etude_op25_no3
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Étude Op.25 No.3 in F major"
+  title_ja: "練習曲 作品25-3 ヘ長調"
+  key: "F"
+  url: "http://piano-midi.de/midis/chopin/chpn_op25_e3.mid"
+
+- id: chopin_etude_op25_no4
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Étude Op.25 No.4 in A minor"
+  title_ja: "練習曲 作品25-4 イ短調"
+  key: "a"
+  url: "http://piano-midi.de/midis/chopin/chpn_op25_e4.mid"
+
+- id: chopin_etude_op25_no11
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Étude Op.25 No.11 in A minor \"Winter Wind\""
+  title_ja: "練習曲 作品25-11 イ短調「木枯らし」"
+  key: "a"
+  url: "http://piano-midi.de/midis/chopin/chpn_op25_e11.mid"
+
+- id: chopin_etude_op25_no12
+  composer_en: "Frédéric Chopin"
+  composer_ja: "フレデリック・ショパン"
+  title_en: "Étude Op.25 No.12 in C minor"
+  title_ja: "練習曲 作品25-12 ハ短調"
+  key: "c"
+  url: "http://piano-midi.de/midis/chopin/chpn_op25_e12.mid"

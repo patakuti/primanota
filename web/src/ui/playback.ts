@@ -50,17 +50,20 @@ let sharedContext: AudioContext | null = null;
 let sharedSynth: WorkletSynthesizer | null = null;
 let sharedSequencer: Sequencer | null = null;
 let soundBankReady: Promise<void> | null = null;
+let engineReady: Promise<Sequencer> | null = null;
 // Key of whichever song (full piece or onset preview) is currently loaded into
 // sharedSequencer, e.g. "chopin_op10_no12#full" or "chopin_op10_no12#chord".
 // The full-piece PlaybackController and playOnsetPreview() below both compare
 // against this to detect being superseded by the other.
 let loadedSongKey: string | null = null;
 
-async function getSharedSequencer(): Promise<Sequencer> {
+/**
+ * Load the AudioWorklet + SoundFont (~32MB) and build the shared Sequencer,
+ * but never touch AudioContext.resume() -- unlike getSharedSequencer(), this
+ * is safe to call without a user gesture (see preloadPlaybackEngine()).
+ */
+async function ensureEngineLoaded(): Promise<Sequencer> {
   sharedContext ??= new AudioContext();
-  if (sharedContext.state === 'suspended') {
-    await sharedContext.resume();
-  }
   if (!sharedSynth) {
     await sharedContext.audioWorklet.addModule(WORKLET_URL);
     sharedSynth = new WorkletSynthesizer(sharedContext);
@@ -81,12 +84,45 @@ async function getSharedSequencer(): Promise<Sequencer> {
     masterGain.connect(limiter);
     limiter.connect(sharedContext.destination);
   }
-  soundBankReady ??= fetch(SOUNDFONT_URL)
-    .then((res) => res.arrayBuffer())
-    .then((buf) => sharedSynth!.soundBankManager.addSoundBank(buf, 'main'));
+  if (!soundBankReady) {
+    soundBankReady = fetch(SOUNDFONT_URL)
+      .then((res) => res.arrayBuffer())
+      .then((buf) => sharedSynth!.soundBankManager.addSoundBank(buf, 'main'))
+      .catch((err) => {
+        soundBankReady = null; // let the next call retry the fetch instead of staying stuck on this rejection
+        throw err;
+      });
+  }
   await soundBankReady;
   sharedSequencer ??= new Sequencer(sharedSynth, { skipToFirstNoteOn: false });
   return sharedSequencer;
+}
+
+/**
+ * Kick off loading the sound engine in the background as soon as the app
+ * starts, instead of waiting for the first preview click (main.ts calls this
+ * at bootstrap). AudioContext.resume() still only happens later, from a user
+ * gesture (getSharedSequencer(), below) -- this just hides the network
+ * fetch/parse latency behind the time the user spends looking at the quiz.
+ */
+export function preloadPlaybackEngine(): Promise<void> {
+  engineReady ??= ensureEngineLoaded().catch((err) => {
+    engineReady = null; // let the next call (e.g. a click) retry from scratch
+    throw err;
+  });
+  return engineReady.then(() => undefined);
+}
+
+async function getSharedSequencer(): Promise<Sequencer> {
+  engineReady ??= ensureEngineLoaded().catch((err) => {
+    engineReady = null;
+    throw err;
+  });
+  const sequencer = await engineReady;
+  if (sharedContext!.state === 'suspended') {
+    await sharedContext!.resume();
+  }
+  return sequencer;
 }
 
 export class PlaybackController {

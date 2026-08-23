@@ -5,7 +5,7 @@ import { noteOff, noteOn, resume, setSustain, stopAll } from './audio/synth.ts';
 import { Keyboard } from './ui/keyboard.ts';
 import { QuizController } from './ui/quiz.ts';
 import * as answer from './ui/answer.ts';
-import { playOnsetPreview, stopSharedPlayback, type OnsetPreviewVariant } from './ui/playback.ts';
+import { playOnsetPreview, preloadPlaybackEngine, stopSharedPlayback, type OnsetPreviewVariant } from './ui/playback.ts';
 
 const KEYBOARD_CLICK_VELOCITY = 90;
 const SEEK_STEP_MS = 5000;
@@ -171,6 +171,27 @@ function bootstrap(): void {
   document.getElementById('play-onset-1000-btn')?.addEventListener('click', () => void playCurrentOnsetPreview('1000'));
   document.getElementById('reveal-answer-btn')?.addEventListener('click', revealAnswer);
   document.getElementById('next-piece-btn')?.addEventListener('click', goToNextPiece);
+
+  // Preload the sound engine (AudioWorklet + ~32MB SoundFont) as soon as the
+  // app starts, instead of waiting for the first preview click, so the
+  // network fetch/parse latency is mostly hidden behind quiz-reading time
+  // (requirement 20). The preview buttons stay disabled + a status message
+  // shown (see index.html) until this settles.
+  const soundStatusEl = document.getElementById('sound-status');
+  const onsetButtons = ['play-onset-chord-btn', 'play-onset-0500-btn', 'play-onset-1000-btn']
+    .map((id) => document.getElementById(id))
+    .filter((el): el is HTMLButtonElement => el instanceof HTMLButtonElement);
+  preloadPlaybackEngine()
+    .then(() => {
+      for (const btn of onsetButtons) btn.disabled = false;
+      if (soundStatusEl) soundStatusEl.hidden = true;
+    })
+    .catch((err: unknown) => {
+      console.error('Failed to preload the sound engine', err);
+      // Re-enable anyway: clicking calls playOnsetPreview(), which retries the load itself.
+      for (const btn of onsetButtons) btn.disabled = false;
+      if (soundStatusEl) soundStatusEl.textContent = 'Sound engine failed to load — press a preview button to retry.';
+    });
 
   quiz.onChange(renderQuizState);
   renderQuizState();

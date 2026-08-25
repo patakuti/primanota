@@ -21,10 +21,16 @@ const BLACK_KEY_HEIGHT = 90;
 const QWERTY_SEMITONE_OFFSETS: Record<string, number> = {
   a: 0, w: 1, s: 2, e: 3, d: 4, f: 5, t: 6, g: 7, y: 8, h: 9, u: 10, j: 11, k: 12, o: 13, l: 14, p: 15,
 };
-const QWERTY_WINDOW_SEMITONES = 15; // highest offset in QWERTY_SEMITONE_OFFSETS
 const DEFAULT_BASE_MIDI = 60; // C4
-const MIN_BASE_MIDI = LOWEST_MIDI;
-const MAX_BASE_MIDI = HIGHEST_MIDI - QWERTY_WINDOW_SEMITONES;
+const MIN_BASE_MIDI = LOWEST_MIDI; // C3
+// C5, one octave above default. Clamping min/max symmetrically around the
+// default at exactly +/-12 semitones keeps the reachable set to {C3, C4, C5}
+// -- an asymmetric bound (e.g. HIGHEST_MIDI minus the QWERTY window's 15
+// semitones) would also make an off-octave value like A3/A4 reachable via
+// repeated shifts. At base C5 the window's top (O/L/P, MIDI 85-87) exceeds
+// the keyboard's visible top (C6, MIDI 84): those keys still sound but have
+// no key to highlight, an accepted tradeoff (02_design.md 4.4).
+const MAX_BASE_MIDI = DEFAULT_BASE_MIDI + 12;
 
 type KeyEventName = 'press' | 'release';
 type KeyListener = (midi: number) => void;
